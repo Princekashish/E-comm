@@ -6,7 +6,17 @@ function About() {
   return (
     <>
       <div className="bg-white h-36">
-        <Header />
+        <Header
+          frame1={[
+            { text: "About", link: "/about" },
+            { text: "Stories", link: "/Stories" },
+            { text: "Factories", link: "/Factories" },
+            { text: "Enviromental Initiative", link: "/Enviromental-Initiative" },
+            { text: "Our Carban Commitment", link: "/Our-Carban-Commitment" },
+            { text: "Annual Imapct Repot", link: "/Annual-Imapct-Repot" },
+            { text: "Cleaner Faction", link: "/cleanerfashion" },
+          ]}
+        />
       </div>
       <div className=' relative bg-[url("../Img/Section02.png")] bg-cover bg-center bg-no-repeat h-[691px] pl-9 pr-96 py-72 flex-col items-start gap-2.5 bg-local'>
         {/* Fixed text overlay */}
@@ -34,7 +44,7 @@ function About() {
       </div>
       {/* about */}
       <div className="h-[525px] px-64 py-20 text-center gap-5">
-        <div className="relative top-1/2 left-1/2  transform -translate-x-1/2 -translate-y-1/2 ">
+        <div className="relative top-1/2 left-1/2 h-[173px] w-[884px] transform -translate-x-1/2 -translate-y-1/2 ">
           <h1 className="grow shrink basis-0 text-center text-black text-4xl font-normal font-['Maison Neue'] leading-10 tracking-tight">
             At Everlane, we want the right choice to be as easy as putting on a
             great T-shirt. That’s why we partner with the best, ethical
@@ -50,7 +60,7 @@ function About() {
 
       <div className="bg-[#E6DED8] h-[733px] flex ">
         <div>
-          <img src="../Img/image.png" alt="" />
+          <img src="../Img/image.png" alt="" className="h-[733px] w-[700px]" />
         </div>
         <div className=" px-16 flex-col justify-center items-center gap-5 inline-flex ">
           <div className="w-[560px] h-[64px]">
@@ -99,7 +109,7 @@ function About() {
           </div>
         </div>
         <div className="pl-8">
-          <img src="../Img/image2.png" alt="" className="w-fit" />
+          <img src="../Img/image2.png" alt="" className="h-[552px] w-[700px]" />
         </div>
       </div>
 
@@ -109,7 +119,11 @@ function About() {
       {/* col */}
       <div className="bg-[#ffff] h-[660px] flex ">
         <div>
-          <img src="../Img/Screenshot 2023-11-30 at 6.28 1.png" alt="" />
+          <img
+            src="../Img/Screenshot 2023-11-30 at 6.28 1.png"
+            alt=""
+            className="h-[733px] w-[700px]"
+          />
         </div>
         <div className=" px-16 flex-col justify-center items-center gap-5 inline-flex ">
           <div className="w-[560px] h-[64px]">
@@ -180,9 +194,8 @@ function About() {
         </div>
       </div>
       <div>
-        <Footer/>
+        <Footer />
       </div>
-
     </>
   );
 }

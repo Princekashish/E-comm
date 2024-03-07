@@ -188,16 +188,14 @@ function Footer() {
           ].map((items, i) => {
             return (
               <div key={i} className="flex">
-                <Link to={items.link}>
-                  {items.text}
-                </Link>
+                <Link to={items.link}>{items.text}</Link>
               </div>
             );
           })}
         </div>
 
         <div className="w-96 text-center text-neutral-500 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
-            <h1>© 2024 All Rights Reserved</h1>
+          <h1>© 2024 All Rights Reserved</h1>
         </div>
       </div>
     </div>

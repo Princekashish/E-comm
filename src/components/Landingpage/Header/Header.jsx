@@ -6,7 +6,7 @@ import { CiSearch } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
 
-function Header() {
+function Header({frame1}) {
   const [hoverlink, sethoverlink] = useState(null);
   const [showdropdown, setshowdropdown] = useState(false);
   const [searchbar, setsearchbar] = useState("");
@@ -115,7 +115,7 @@ function Header() {
           })}
         </div>
         <div className="  w-32 h-3.5 px-1 py-7">
-          <img src=".\Img\Logo.png" alt="brand logo" />
+          <Link to='/'><img src=".\Img\Logo.png" alt="brand logo" /></Link>
         </div>
         <div className="flex gap-2.5 text-lg  p-3 ">
           <div className="text-black">
@@ -154,29 +154,15 @@ function Header() {
       </div>
 
       <div className="h-14 self-stretch flex justify-center items-center gap-8">
-        {[
-          "Holiday Gifting",
-          "New Arrivals",
-          "Best-Sellers",
-          "Clothing",
-          "Tops & Sweaters",
-          "Pants & jeans",
-          "Outerwear",
-          "Shoes & Bags",
-          "Sale",
-        ].map((item, i) => {
-          return (
-            <div
-              key={i}
-              className="text-neutral-800 leading-none tracking-tight font-['Maison Neue'] font-normal text-xs"
-            >
-              <a href="#" className={`${i === 8 && "text-red-600"}`}>
-                {item}
-              </a>
-            </div>
-          );
-        })}
-      </div>
+  {frame1 && frame1.map((items, i) => (
+    <div
+      key={i}
+      className="text-neutral-800 leading-none tracking-tight font-['Maison Neue'] font-normal text-xs"
+    >
+      <Link to={items.link} className={`${i === 8 && "text-red-600"}`}>{items.text}</Link>
+    </div>
+  ))}
+</div>
       
     </div>
   );
