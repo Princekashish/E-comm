@@ -1,6 +1,7 @@
 import React from "react";
-import Header from "../Landingpage/Header/Header";
-import Footer from "../Landingpage/Footer/Footer";
+
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
 
 function About() {
   return (
@@ -9,9 +10,12 @@ function About() {
         <Header
           frame1={[
             { text: "About", link: "/about" },
-            { text: "Stories", link: "/Stories" },
+            { text: "Stories", link: "/about/stories" },
             { text: "Factories", link: "/Factories" },
-            { text: "Enviromental Initiative", link: "/Enviromental-Initiative" },
+            {
+              text: "Enviromental Initiative",
+              link: "/Enviromental-Initiative",
+            },
             { text: "Our Carban Commitment", link: "/Our-Carban-Commitment" },
             { text: "Annual Imapct Repot", link: "/Annual-Imapct-Repot" },
             { text: "Cleaner Faction", link: "/cleanerfashion" },
@@ -192,9 +196,6 @@ function About() {
             </a>
           </div>
         </div>
-      </div>
-      <div>
-        <Footer />
       </div>
     </>
   );

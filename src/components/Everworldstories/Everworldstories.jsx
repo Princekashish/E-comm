@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "../Landingpage/Header/Header";
+import Header from "../Header/Header";
 import { Link, Outlet } from "react-router-dom";
-import Footer from "../Landingpage/Footer/Footer";
+import Footer from "../Footer/Footer";
 
 function Everworldstories() {
   return (
@@ -119,15 +119,19 @@ function Everworldstories() {
               </div>
             </div>
             <div className="w-full flex justify-center items-center">
-              <button className=" text-center text-white text-sm font-semibold font-['Maison Neue'] leading-tight tracking-wide w-60 h-16  py-5 bg-neutral-800 rounded-lg  gap-2.5 ">
-                Load More Articals{" "}
-              </button>
-              
+              <a href="/everworld-stories/blog">
+                {" "}
+                <Link to="/everworld-stories/blog-post">
+                  <button className=" text-center text-white text-sm font-semibold font-['Maison Neue'] leading-tight tracking-wide w-60 h-16  py-5 bg-neutral-800 rounded-lg  gap-2.5 ">
+                    Load More Articals{" "}
+                  </button>
+                </Link>
+              </a>
             </div>
           </div>
         </div>
-        <Outlet/>
       </div>
+
       <div className="bg-[url('/Img/image13.png')] bg-cover  bg-center bg-no-repeat w-full h-56"></div>
       {/* section3 */}
       <div
@@ -165,16 +169,15 @@ function Everworldstories() {
           Follow us on social for more
         </div>
         <div className="  px-24 py-5 bg-white rounded-lg justify-center  gap-2.5 ">
-          <a href="https://www.instagram.com/prince_kashish_?igsh=MWhqemd5ZjJqMTJ1dA== " target="_blank"><button className="text-center text-black text-sm font-semibold font-['Maison Neue'] leading-tight tracking-wide">
-            @Everlane Instagram
-          </button></a>
+          <a
+            href="https://www.instagram.com/prince_kashish_?igsh=MWhqemd5ZjJqMTJ1dA== "
+            target="_blank"
+          >
+            <button className="text-center text-black text-sm font-semibold font-['Maison Neue'] leading-tight tracking-wide">
+              @Everlane Instagram
+            </button>
+          </a>
         </div>
-        
-      </div>
-
-      {/* foot */}
-      <div>
-        <Footer/>
       </div>
     </div>
   );

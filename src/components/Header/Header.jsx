@@ -115,7 +115,7 @@ function Header({frame1}) {
           })}
         </div>
         <div className="  w-32 h-3.5 px-1 py-7">
-          <Link to='/'><img src=".\Img\Logo.png" alt="brand logo" /></Link>
+          <Link to='/'><img src="..\Img\Logo.png" alt="brand logo" /></Link>
         </div>
         <div className="flex gap-2.5 text-lg  p-3 ">
           <div className="text-black">
