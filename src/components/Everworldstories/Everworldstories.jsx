@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../Header/Header";
 import { Link, Outlet } from "react-router-dom";
 import Footer from "../Footer/Footer";
+import { motion, useAnimation } from "framer-motion";
 
 function Everworldstories() {
   return (
@@ -131,8 +132,41 @@ function Everworldstories() {
           </div>
         </div>
       </div>
+      {/* marquee */}
 
-      <div className="bg-[url('/Img/image13.png')] bg-cover  bg-center bg-no-repeat w-full h-56"></div>
+      {/* <div className="inline-flex whitespace-nowrap overflow-hidden">
+        <motion.div
+          initial={{ x: 0 }}
+          animate={{ x: "-100%" }}
+          transition={{ ease: "linear", repeat: Infinity, duration: 2 }}
+          className=" items-center flex "
+        >
+          <h1 className="font-bold text-4xl">Keep it clean</h1>
+          <img src=".\Img\recycle.avif" alt="img" className="h-20" />
+          <h1 className="font-bold text-4xl">Keep it clean</h1>
+          <img src=".\Img\recycle.avif" alt="img" className="h-20" />
+          <h1 className="font-bold text-4xl">Keep it clean</h1>
+          <img src=".\Img\recycle.avif" alt="img" className="h-20" />
+          <h1 className="font-bold text-4xl">Keep it clean</h1>
+          <img src=".\Img\recycle.avif" alt="img" className="h-20" />
+        </motion.div>
+        <motion.div
+          initial={{ x: 0 }}
+          animate={{ x: "-100%" }}
+          transition={{ ease: "linear", repeat: Infinity, duration: 2 }}
+          className=" flex items-center  "
+        >
+          <h1 className="font-bold text-4xl">Keep it clean</h1>
+          <img src=".\Img\recycle.avif" alt="img" className="h-20" />
+          <h1 className="font-bold text-4xl">Keep it clean</h1>
+          <img src=".\Img\recycle.avif" alt="img" className="h-20" />
+          <h1 className="font-bold text-4xl">Keep it clean</h1>
+          <img src=".\Img\recycle.avif" alt="img" className="h-20" />
+          <h1 className="font-bold text-4xl">Keep it clean</h1>
+          <img src=".\Img\recycle.avif" alt="img" className="h-20" />
+        </motion.div>
+      </div> */}
+
       {/* section3 */}
       <div
         className=" w-fit h-[682px] self-stretch px-14 py-20 flex-col justify-start items-start  gap-7 flex 

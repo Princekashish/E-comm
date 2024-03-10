@@ -1,14 +1,13 @@
 import React from "react";
 
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-
-import Header from "./components/Header/Header";
 import Women from "./components/Landingpage/Women";
 import About from "./components/About/About";
 import Stories from "./components/About/Stories";
 import Everworldstories from "./components/Everworldstories/Everworldstories";
-import Blog from "./components/Everworldstories/Blog";
+
 import Router from "./components/Router/Router";
+import Landingpage from "./components/Landingpage/Landingpage";
 
 const frame1Data = [
   { text: "Holiday Gifting", link: "/Holiday-Gifting" },
@@ -23,24 +22,14 @@ const frame1Data = [
 ];
 
 const route = createBrowserRouter([
-  {
-    path: "",
-    Component: Router,
-    children: [
-      { path: "/", element: <Header frame1={frame1Data} /> },
-      { path: "/women", Component: Women },
-      { path: "/about", Component: About },
-      { path: "/about/stories", Component: Stories },
+  { path: "/", Component: Landingpage },
+  { path: "/women", Component: Women },
+  { path: "/about", Component: About },
+  { path: "/about/stories", Component: Stories },
 
-      {
-        path: "/everworld-stories",
-        Component: Everworldstories,
-      },
-      {
-        path: "/everworld-stories/blog-post",
-        Component: Blog,
-      },
-    ],
+  {
+    path: "/everworld-stories",
+    Component: Everworldstories,
   },
 ]);
 

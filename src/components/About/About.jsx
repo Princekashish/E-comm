@@ -1,12 +1,11 @@
 import React from "react";
-
-import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 function About() {
   return (
     <>
-      <div className="bg-white h-36">
+      <div className="h-36">
         <Header
           frame1={[
             { text: "About", link: "/about" },
@@ -196,6 +195,12 @@ function About() {
             </a>
           </div>
         </div>
+        <div>
+    
+        </div>
+      </div>
+      <div>
+        <Footer/>
       </div>
     </>
   );

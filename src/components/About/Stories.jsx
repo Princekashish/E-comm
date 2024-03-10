@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 function Stories() {
   return (
@@ -9,7 +10,7 @@ function Stories() {
           frame1={[
             { text: "About", link: "/about" },
             { text: "Stories", link: "/about/stories" },
-            { text: "Factories", link: "/Factories" },
+            { text: "Factories", link: "/Factories"},
             {
               text: "Enviromental Initiative",
               link: "/Enviromental-Initiative",
@@ -155,6 +156,9 @@ function Stories() {
             </div>
           </div>
         </div>
+      </div>
+      <div>
+        <Footer/>
       </div>
     </div>
   );
