@@ -1,32 +1,33 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaRegUser } from "react-icons/fa";
 import { FiShoppingCart } from "react-icons/fi";
 import { CiSearch } from "react-icons/ci";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Header({ frame1 }) {
-  const [hoverlink, sethoverlink] = useState(null);
-  const [showdropdown, setshowdropdown] = useState(false);
-  const [searchbar, setsearchbar] = useState("");
+  const [searchbar, setSearchBar] = useState(false);
+  const [activeLink, setActiveLink] = useState("");
+  const [showDropdown, setShowDropdown] = useState(false); // State to control dropdown visibility
 
   const toggleDropdown = () => {
-    setsearchbar(!searchbar);
+    setSearchBar(!searchbar);
   };
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (!event.target.closest(".dropdown-menu")) {
-        setsearchbar(false);
-      }
-    };
+  const handleLinkClick = (link) => {
+    if (!activeLink) {
+      setActiveLink(link);
+    }
+  };
 
-    document.addEventListener("mousedown", handleClickOutside);
+  const handleNewArrivalsHover = () => {
+    setShowDropdown(true);
+  };
 
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+  const handleNewArrivalsLeave = () => {
+    setShowDropdown(false);
+  };
+
   return (
     <div className="w-full fixed z-[9999] bg-white  h-36">
       <div className="bg-black self-stretch w-full px-7 py-1.5 text-white leading-none flex  justify-between items-center">
@@ -43,75 +44,35 @@ function Header({ frame1 }) {
           IND
         </div>
       </div>
-      <div className="border-b self-stretch border-zinc-300   flex h-[59px] w-[294] px-16 justify-between items-center">
-        <div className="flex  justify-start items-start  gap-3 px-3 py-5  h-[56px]  text-neutral-800 leading-none tracking-tight font-['Maison Neue'] font-normal text-xs">
+      <div
+        onMouseLeave={handleNewArrivalsLeave}
+        className="border-b self-stretch border-zinc-2`00   flex h-[59px] w-[294] px-16 justify-between items-center"
+      >
+        <div className="flex  justify-start items-start  gap-5 px-3 py-5  h-[56px]  text-neutral-800 leading-none tracking-tight font-['Maison Neue'] font-normal text-xs">
           {[
             {
               text: "Women",
-              link: "/women",
-              dropdownItems: [
-                "items",
-                "Shop All New Arrivals",
-                "The Gift Guide",
-                "New Bottoms",
-                "New Tops",
-                "T-shirt",
-                "Under 1000",
-              ],
+              link: "/#",
             },
             {
               text: "Men",
               link: "/men",
-              dropdownItems: [
-                "Highlights",
-                "Shop All New Arrivals",
-                "The Gift Guide",
-                "New Bottoms",
-                "New Tops",
-                "T-shirt",
-                "Under 1000",
-              ],
             },
             { text: "About", link: "/about" },
             { text: "Everworld Stories", link: "/everworld-stories" },
-          ].map((item, i) => {
-            return (
-              <div key={i}>
-                <Link
-                  to={item.link}
-                  onMouseEnter={() => {
-                    sethoverlink(item.text);
-                    setshowdropdown(
-                      item.text === "Women" || item.text === "Men"
-                    );
-                  }}
-                  onMouseLeave={() => {
-                    sethoverlink(null);
-                  }}
-                  className={`${
-                    hoverlink === item.text ? "border-b-2 border-black" : ""
-                  }`}
-                >
-                  {item.text}
-                </Link>
-                {(hoverlink === item.text ||
-                  (showdropdown &&
-                    (item.text === "Women" || item.text === "Men"))) &&
-                  item.dropdownItems && (
-                    <div
-                      className="absolute top-full left-0 bg-gray-200 w-full flex flex-col gap-3 text-xs font-['Maison Neue'] leading-none tracki h-[406px] text-neutral-800 py-[143px]  "
-                      onMouseLeave={() => setshowdropdown(false)}
-                    >
-                      {item.dropdownItems.map((items, i) => (
-                        <div key={i} className={`${i === 0 && "uppercase "}`}>
-                          {items}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-              </div>
-            );
-          })}
+          ].map((item, i) => (
+            <div key={i}>
+              <Link
+                to={item.link}
+                onClick={() => handleLinkClick(item.link)}
+                className={`hover:bg-gray-300 px-2 py-3 rounded-md ${
+                  activeLink === item.link ? "bg-gray-400" : ""
+                }`}
+              >
+                {item.text}
+              </Link>
+            </div>
+          ))}
         </div>
         <div className="  w-32 h-3.5 px-1 py-7">
           <Link to="/">
@@ -120,10 +81,15 @@ function Header({ frame1 }) {
         </div>
         <div className="flex gap-2.5 text-lg  p-3 ">
           <div className="text-black">
-            <CiSearch size={32} onClick={toggleDropdown} /> {/* Search Icon */}
+            <CiSearch
+              size={25}
+              onClick={toggleDropdown}
+              className="cursor-pointer"
+            />{" "}
+            {/* Search Icon */}
           </div>
           {searchbar && (
-            <div className="absolute top-full right-0 left-0 flex justify-center items-center flex-col bg-gray-200  text-xs font-['Maison Neue'] leading-none tracki h-[406px] text-neutral-800 py-[143px]  ">
+            <div className="absolute top-full right-0 left-0 flex justify-center items-center flex-col bg-gray-200   text-xs font-['Maison Neue'] leading-none tracking-tight h-[406px] text-neutral-800 py-[143px]  ">
               <input type="text" placeholder="Search..." />
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -137,36 +103,90 @@ function Header({ frame1 }) {
           )}
           {[
             {
-              text: <FaRegUser />,
+              text: <FaRegUser size={25} />,
               link: "/login",
             },
             {
-              text: <FiShoppingCart />,
+              text: <FiShoppingCart size={25} />,
               link: "/cart",
             },
-          ].map((item, i) => {
-            return (
-              <div key={i} className=" text-black">
-                <Link to={item.link}>{item.text}</Link>
-              </div>
-            );
-          })}
+          ].map((item, i) => (
+            <div key={i} className=" text-black">
+              <Link to={item.link}>{item.text}</Link>
+            </div>
+          ))}
         </div>
       </div>
 
-      <div className="h-14 self-stretch flex justify-center items-center gap-8">
+      <div className="h-14 self-stretch flex justify-center border-b border-zinc-100 items-center gap-8 ">
         {frame1 &&
           frame1.map((items, i) => (
             <div
               key={i}
-              className="text-neutral-800 leading-none tracking-tight font-['Maison Neue'] font-normal text-xs"
+              className="text-neutral-800 leading-none px-2 py-6 tracking-tight font-['Maison Neue'] font-normal text-xs"
             >
-              <Link to={items.link} className={`${i === 8 && "text-red-600"}`}>
+              <Link
+                to={items.link}
+                onMouseEnter={handleNewArrivalsHover}
+                className={`${i === 7 && "text-red-600"}`}
+              >
                 {items.text}
               </Link>
             </div>
           ))}
       </div>
+      {showDropdown && ( // Render dropdown based on state
+        <div
+          onMouseLeave={handleNewArrivalsLeave}
+          className=" self-stretch flex  items-center justify-center gap-10 h-[50vh]   "
+        >
+          <div className="">
+            <h1 className="uppercase text-xs">HIGHLIGHTS</h1>
+            <div className=" font-['Maison Neue'] pt-3 ">
+              <Link to="/collections">
+                {" "}
+                <h1 className="pt-3 rounded-md py-3 hover:text-2xl">
+                  Shop All New Arrivals
+                </h1>
+              </Link>
+              <h1 className="pt-3">New Bottoms</h1>
+              <h1 className="pt-3">New Tops</h1>
+              <h1 className="pt-3">T-Shirts Bundels</h1>
+            </div>
+          </div>
+          <div>
+            <h1 className="uppercase text-xs">FEATURED SHOPS</h1>
+            <div className=" font-['Maison Neue'] pt-3 ">
+              <h1 className="pt-3">The Transitional Edit</h1>
+              <h1 className="pt-3">The Linen Edit</h1>
+              <h1 className="pt-3">Uniform & Capsule Staples</h1>
+              <h1 className="pt-3">The Performance Chino Shop</h1>
+            </div>
+          </div>
+          <div className="bg-[url('../Img/Frame1.png')] bg-cover bg-center bg-no-repeat   h-60 w-60">
+            <div className="flex justify-center items-end py-[120px] px-[16px] gap-4 ">
+              <h1 className="text-white w-48  text-2xl font-semibold font-['Maison Neue'] leading-loose  ">
+                The Holiday Outfit Edit
+              </h1>
+              <FaArrowRightLong
+                size={24}
+                className=" text-white   w-6 h-6 relative"
+              />
+            </div>
+          </div>
+          <div className="bg-[url('../Img/Frame3.png')] bg-cover bg-center bg-no-repeat   h-60 w-60">
+            <div className="flex justify-center items-end py-[120px] px-[16px] gap-4 ">
+              <h1 className="text-white w-48  text-2xl font-semibold font-['Maison Neue'] leading-loose  ">
+                The Holiday Outfit Edit
+              </h1>
+              <FaArrowRightLong
+                size={24}
+                className=" text-white   w-6 h-6 relative"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

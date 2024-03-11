@@ -18,6 +18,7 @@ function Landingpage() {
             { text: "Our Carban Commitment", link: "/Our-Carban-Commitment" },
             { text: "Annual Imapct Repot", link: "/Annual-Imapct-Repot" },
             { text: "Cleaner Faction", link: "/cleanerfashion" },
+            { text: "Sale", link: "/#" },
           ]}
         />
       </div>
