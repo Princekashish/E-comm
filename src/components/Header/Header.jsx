@@ -29,7 +29,7 @@ function Header({ frame1 }) {
   };
 
   return (
-    <div className="w-full fixed z-[9999] bg-white  h-36">
+    <div className="w-full fixed z-[9999] bg-white  shadow-lg  h-36">
       <div className="bg-black self-stretch w-full px-7 py-1.5 text-white leading-none flex  justify-between items-center">
         <div className="flex justify-center grow shrink  w-[1340px] h-4   gap-1  items-center text-xs font-['Maison Neue']">
           <h1>Get early access on launching and offers.</h1>
@@ -138,7 +138,7 @@ function Header({ frame1 }) {
       {showDropdown && ( // Render dropdown based on state
         <div
           onMouseLeave={handleNewArrivalsLeave}
-          className=" self-stretch flex  items-center justify-center gap-10 h-[50vh]   "
+          className=" self-stretch flex bg-white  items-center justify-center gap-10 h-[50vh]   "
         >
           <div className="">
             <h1 className="uppercase text-xs">HIGHLIGHTS</h1>
