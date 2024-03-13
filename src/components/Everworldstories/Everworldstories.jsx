@@ -213,6 +213,9 @@ function Everworldstories() {
           </a>
         </div>
       </div>
+      <div>
+        <Footer/>
+      </div>
     </div>
   );
 }

@@ -25,7 +25,7 @@ const frame1Data = [
 ];
 
 const route = createBrowserRouter([
-  { path: "/", Component: Landingpage },
+  { path: "/", Component: Men },
   { path: "/men", Component: Men },
   { path: "/about", Component: About },
   { path: "/about/stories", Component: Stories },
