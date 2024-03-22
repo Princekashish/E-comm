@@ -2,6 +2,12 @@ import React from "react";
 import Header from "../Header/Header";
 import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
+import { FaStar } from "react-icons/fa";
+import { FaStarHalfAlt } from "react-icons/fa";
+import { FaChevronLeft } from "react-icons/fa";
+import { FaChevronRight } from "react-icons/fa";
+import { IoEllipseOutline } from "react-icons/io5";
+import { IoEllipseSharp } from "react-icons/io5";
 
 function Men() {
   const shopping = [
@@ -70,6 +76,13 @@ function Men() {
       text: "Shirt",
     },
   ];
+  const review = [
+    {
+      text:"People Are Talking",
+      
+
+    }
+  ]
   return (
     <div>
       <div className="h-36 bg-white">
@@ -184,7 +197,9 @@ function Men() {
       {/* everlen crosal */}
 
       <div className="h-[817px] pb-10 flex justify-center items-center flex-col ">
-        <h1 className="text-center py-20 font-['Maison Neue'] leading-none tracking-wider text-xl">Spring styles to wear together or apart—whatever the weather</h1>
+        <h1 className="text-center py-20 font-['Maison Neue'] leading-none tracking-wider text-xl">
+          Spring styles to wear together or apart—whatever the weather
+        </h1>
         <div className="crosal h-[477px] w-[1316px] flex overflow-x-auto overflow-y-hidden gap-3 scroll-smooth">
           {shopping.map((items, i) => (
             <div key={i} className=" h-[461px]  min-w-[282.69px]">
@@ -213,7 +228,45 @@ function Men() {
 
       {/* crosel */}
 
-      <div className="h-[806px] bg-gray-200 mb-10"></div>
+      <div className="h-[806px] mb-10 ">
+        <div className="h-[695px]  flex justify-around items-center">
+          <FaChevronLeft className="cursor-pointer " />
+          <div className=" h-[253px] w-[530px] px-[133px] space-y-9 ">
+            <p className="self-stretch text-black text-base font-normal font-['Maison Neue'] leading-normal tracking-wide">
+              People Are Talknng
+            </p>
+            <div className="">
+              <div className="flex gap-1">
+                {[...Array(4)].map((_, index) => (
+                  <FaStar key={index} />
+                ))}
+                <FaStarHalfAlt />
+              </div>
+              <p className="self-stretch text-black text-lg font-normal font-['Maison Neue'] leading-loose">
+                "Love this shirt! Fits perfectly and <br /> the fabric is thick
+                without <br /> being stiff."
+              </p>
+            </div>
+            <p>
+              <span className="text-black text-sm font-normal font-['Maison Neue'] leading-none tracking-wider">
+                --JonSnSF .
+              </span>
+              <span className="underline text-black text-sm font-normal font-['Maison Neue'] underline leading-tight tracking-wider">
+                The Heavyweight Overshit
+              </span>
+            </p>
+          </div>
+          <img className="h-695px] w-[530px]" src="./Img/image( 28).png" />
+          <FaChevronRight className="cursor-pointer " />
+        </div>
+        <div className=" h-[81px] flex justify-center items-center">
+          <div className="flex gap-2 text-xs">
+            {[...Array(4)].map((_, i) => (
+              <IoEllipseOutline />
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* cotten */}
       <div className=" h-[967px] border-t border-neutral-800 flex gap-8 font-['Maison Neue'] justify-center items-center leading-none tracking-wider">
@@ -327,7 +380,7 @@ function Men() {
 
       {/* footer */}
       <div>
-        <Footer/>
+        <Footer />
       </div>
     </div>
   );

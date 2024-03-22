@@ -2,13 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   box-sizing: border-box;
   scrollbar-width: thin;
   scroll-behavior: smooth;
+  scrollbar-color: #8e8e8e #fff;
 }
 /* Add this CSS in your global CSS or in a CSS file that's included in your project */
- .crosal ::-webkit-scrollbar{
-  display: none;
-  }
-
