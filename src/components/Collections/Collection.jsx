@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Header from "../Header/Header";
 import { MdKeyboardArrowUp } from "react-icons/md";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import productData from "./clothscoll";
+import Footer from "../Footer/Footer";
 
 function Collection() {
   const [Category, setCategory] = useState(false);
@@ -35,8 +37,8 @@ function Collection() {
           ]}
         />
       </div>
-      <section className="flex h-[1775px] gap-5   px-[130px]">
-        <div className="Filter  sticky top-[176px] overflow-y-auto scroll-smooth  w-[230px]  max-h-[83vh]   py-[30px]">
+      <section className="  flex max-w-[1400px] gap-5   px-10">
+        <div className=" sticky top-[176px] overflow-y-auto scroll-smooth  w-[230px]  max-h-[80vh]   py-[30px]">
           <div className="border-b h-[48px]  border-zinc-300 w-full  py-3 ">
             <h1 className="font-['Maison Neue']"> totoal Prduct </h1>
           </div>
@@ -149,52 +151,70 @@ function Collection() {
           </div>
 
           {/* color */}
-          <div className=" font-['Maison Neue']  w-[196px] h-[50px]">
+          <div className=" font-['Maison Neue']  w-[196px] h-[50px] ">
             <h1>Color</h1>
           </div>
           <div className="Frame2  w-48 h-44 flex-col flex gap-3 justify-center items-center">
-           <div className="flex justify-between  w-full">
-            <div className="flex flex-col justify-center items-center">
-            <div className="w-8 h-8 rounded-full bg-zinc-900 border-gray-200 border-3 hover:border-black hover:border-1"/>
-            <h1 className="text-sm  font-['Maison Neue']  tracking-tight">Black</h1>
+            <div className="flex justify-between  w-full">
+              <div className="flex flex-col justify-center items-center">
+                <div className="w-8 h-8 rounded-full bg-zinc-900 border-gray-200 border-3 hover:border-black hover:border-1" />
+                <h1 className="text-sm  font-['Maison Neue']  tracking-tight">
+                  Black
+                </h1>
+              </div>
+              <div className="flex flex-col justify-center items-center">
+                <div className="w-8 h-8 rounded-full bg-white border-black border-2 hover:border-black hover:border-1" />
+                <h1 className="text-sm  font-['Maison Neue'] tracking-tight">
+                  White
+                </h1>
+              </div>
+              <div className="flex flex-col justify-center items-center">
+                <div className="w-8 h-8 rounded-full bg-blue-900  border-gray-200 border-2 hover:border-black hover:border-1" />
+                <h1 className="text-sm  font-['Maison Neue'] tracking-tight">
+                  Blue
+                </h1>
+              </div>
             </div>
-            <div className="flex flex-col justify-center items-center">
-            <div className="w-8 h-8 rounded-full bg-white border-black border-2 hover:border-black hover:border-1"/>
-            <h1 className="text-sm  font-['Maison Neue'] tracking-tight">White</h1>
+            <div className="flex justify-between   w-full">
+              <div className="flex flex-col justify-center items-center">
+                <div className="w-8 h-8 rounded-full bg-pink-900  border-gray-200 border-2 hover:border-black hover:border-1" />
+                <h1 className="text-sm  font-['Maison Neue']  tracking-tight">
+                  Pink
+                </h1>
+              </div>
+              <div className="flex flex-col justify-center items-center">
+                <div className="w-8 h-8 rounded-full bg-yellow-800  border-gray-200 border-2 hover:border-black hover:border-1" />
+                <h1 className="text-sm  font-['Maison Neue'] tracking-tight">
+                  Brown
+                </h1>
+              </div>
+              <div className="flex flex-col justify-center items-center">
+                <div className="w-8 h-8 rounded-full bg-stone-600  border-gray-200 border-2 hover:border-black hover:border-1" />
+                <h1 className="text-sm  font-['Maison Neue'] tracking-tight">
+                  olive
+                </h1>
+              </div>
             </div>
-            <div className="flex flex-col justify-center items-center">
-            <div className="w-8 h-8 rounded-full bg-blue-900  border-gray-200 border-2 hover:border-black hover:border-1"/>
-            <h1 className="text-sm  font-['Maison Neue'] tracking-tight">Blue</h1>
+            <div className="flex justify-between   w-full">
+              <div className="flex flex-col justify-center items-center">
+                <div className="w-8 h-8 rounded-full bg-zinc-200  border-gray-200 border hover:border-black hover:border-1" />
+                <h1 className="text-sm  font-['Maison Neue']  tracking-tight">
+                  Gray
+                </h1>
+              </div>
+              <div className="flex flex-col justify-center items-center">
+                <div className="w-8 h-8 rounded-full bg-orange-400  border-gray-200 border hover:border-black hover:border-1" />
+                <h1 className="text-sm  font-['Maison Neue'] tracking-tight">
+                  Orange
+                </h1>
+              </div>
+              <div className="flex flex-col justify-center items-center">
+                <div className="w-8 h-8 rounded-full bg-stone-400  hover:border-black hover:border-1 border-gray-200 border-2" />
+                <h1 className="text-sm  font-['Maison Neue'] tracking-tight">
+                  Tan
+                </h1>
+              </div>
             </div>
-           </div>
-           <div className="flex justify-between   w-full">
-            <div className="flex flex-col justify-center items-center">
-            <div className="w-8 h-8 rounded-full bg-pink-900  border-gray-200 border-2 hover:border-black hover:border-1"/>
-            <h1 className="text-sm  font-['Maison Neue']  tracking-tight">Pink</h1>
-            </div>
-            <div className="flex flex-col justify-center items-center">
-            <div className="w-8 h-8 rounded-full bg-yellow-800  border-gray-200 border-2 hover:border-black hover:border-1"/>
-            <h1 className="text-sm  font-['Maison Neue'] tracking-tight">Brown</h1>
-            </div>
-            <div className="flex flex-col justify-center items-center">
-            <div className="w-8 h-8 rounded-full bg-stone-600  border-gray-200 border-2 hover:border-black hover:border-1"/>
-            <h1 className="text-sm  font-['Maison Neue'] tracking-tight">olive</h1>
-            </div>
-           </div>
-           <div className="flex justify-between   w-full">
-            <div className="flex flex-col justify-center items-center">
-            <div className="w-8 h-8 rounded-full bg-zinc-200  border-gray-200 border hover:border-black hover:border-1"/>
-            <h1 className="text-sm  font-['Maison Neue']  tracking-tight">Gray</h1>
-            </div>
-            <div className="flex flex-col justify-center items-center">
-            <div className="w-8 h-8 rounded-full bg-orange-400  border-gray-200 border hover:border-black hover:border-1"/>
-            <h1 className="text-sm  font-['Maison Neue'] tracking-tight">Orange</h1>
-            </div>
-            <div className="flex flex-col justify-center items-center">
-            <div className="w-8 h-8 rounded-full bg-stone-400  hover:border-black hover:border-1 border-gray-200 border-2"/>
-            <h1 className="text-sm  font-['Maison Neue'] tracking-tight">Tan</h1>
-            </div>
-           </div>
           </div>
 
           {/* size */}
@@ -321,8 +341,101 @@ function Collection() {
             </div>
           </div>
         </div>
+        <div className="  w-[1028px] min-h-[1715px] sticky top-[176px]">
+          <div className="w-fit h-24 pt-4 pb-2 flex-col justify-start items-start inline-flex">
+            <p className="HomeMen self-stretch text-neutral-500 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
+              Home / Men
+            </p>
+            <h1 className="self-stretch text-black text-3xl font-normal font-['Maison Neue'] leading-10">
+              Men’s Clothing & Apparel - New Arrivals
+            </h1>
+            <p className="self-stretch text-black text-base font-normal font-['Maison Neue'] leading-normal tracking-wide">
+              Featured
+            </p>
+          </div>
+          <div className="overflow-hidden mt-4  grid grid-cols-3 gap-16 ">
+            {productData.map((items) => (
+              <div key={items.id} className="w-[329.33px] h-[483px]">
+                <img
+                  src={items.image}
+                  className="Image self-stretch h-[392px] w-[329px]"
+                />
+                <div className="TagPrice relative -top-1/2 px-1.5 py-1 bg-white justify-center items-center gap-2.5 inline-flex">
+                  <p className="Off text-center text-red-700 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
+                    30% off
+                  </p>
+                </div>
+                <div className="Frame1 self-stretch h-12 flex-col justify-start items-start gap-0.5 flex">
+                  <div className=" self-stretch py-2 justify-start items-start gap-3 inline-flex">
+                    <p className=" grow shrink   basis-0 text-neutral-800  max-w-[233px] text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
+                      {items.title}
+                    </p>
+                    <div className="Frame1 justify-end items-center gap-1 flex">
+                      <div className="60 text-right text-neutral-500 text-xs font-normal font-['Maison Neue'] line-through leading-none tracking-tight">
+                        $188
+                      </div>
+                      <div className="60 text-right text-neutral-800 text-xs font-semibold font-['Maison Neue'] leading-none tracking-tight">
+                        $132
+                      </div>
+                    </div>
+                  </div>
+                  <div className="Bone self-stretch h-4 text-neutral-500 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
+                    Black
+                  </div>
+                  <div className="ColorSelection pt-3 flex gap-3">
+                    {[
+                      "stone-700",
+                      "neutral-700",
+                      "stone-500",
+                      "neutral-800",
+                    ].map((color, index) => (
+                      <div
+                        key={index}
+                        className={`Selection relative w-5 h-5 border border-black rounded-full bg-${color}`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
+      {/* <Footer /> */}
     </div>
+
+    // <div className="Product w-80 h-96 flex-col justify-start items-start gap-2.5 inline-flex">
+
+    //   <div className="Frame1 self-stretch h-12 flex-col justify-start items-start gap-0.5 flex">
+    //     <div className="Frame1 self-stretch py-2 justify-start items-start gap-3 inline-flex">
+    //       <div className="TheWaffleLongSleeveCrew grow shrink basis-0 text-neutral-800 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">The Cloud Relaxed Cardigan</div>
+    //       <div className="Frame1 justify-end items-center gap-1 flex">
+    //         <div className="60 text-right text-neutral-500 text-xs font-normal font-['Maison Neue'] line-through leading-none tracking-tight">$188</div>
+    //         <div className="60 text-right text-neutral-800 text-xs font-semibold font-['Maison Neue'] leading-none tracking-tight">$132</div>
+    //       </div>
+    //     </div>
+    //     <div className="Bone self-stretch h-4 text-neutral-500 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">Black</div>
+    //   </div>
+    //   <div className="Frame1 self-stretch justify-start items-center gap-2.5 inline-flex">
+    //     <div className="Selection w-5 h-5 relative">
+    //       <div className="Ellipse6 w-5 h-5 left-0 top-0 absolute rounded-full border border-black" />
+    //       <div className="Ellipse7 w-4 h-4 left-[2px] top-[2px] absolute bg-stone-700 rounded-full" />
+    //     </div>
+    //     <div className="Selection w-5 h-5 relative">
+    //       <div className="Ellipse6 w-5 h-5 left-0 top-0 absolute rounded-full border border-black" />
+    //       <div className="Ellipse7 w-5 h-5 left-0 top-0 absolute bg-neutral-700 rounded-full" />
+    //     </div>
+    //     <div className="Selection w-5 h-5 relative">
+    //       <div className="Ellipse6 w-5 h-5 left-0 top-0 absolute rounded-full border border-black" />
+    //       <div className="Ellipse7 w-5 h-5 left-0 top-0 absolute bg-stone-500 rounded-full" />
+    //     </div>
+    //     <div className="Selection w-5 h-5 relative">
+    //       <div className="Ellipse6 w-5 h-5 left-0 top-0 absolute rounded-full border border-black" />
+    //       <div className="Ellipse7 w-5 h-5 left-0 top-0 absolute bg-neutral-800 rounded-full" />
+    //     </div>
+    //     <div className="Selection w-5 h-5 relative" />
+    //   </div>
+    // </div>
   );
 }
 

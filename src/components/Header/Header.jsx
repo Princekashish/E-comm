@@ -104,7 +104,7 @@ function Header({ frame1 }) {
           {[
             {
               text: <FaRegUser size={25} />,
-              link: "/login",
+              link: "/Signup",
             },
             {
               text: <FiShoppingCart size={25} />,
