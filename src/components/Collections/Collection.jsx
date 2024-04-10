@@ -4,8 +4,11 @@ import { MdKeyboardArrowUp } from "react-icons/md";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import productData from "./clothscoll";
 import Footer from "../Footer/Footer";
+import { useNavigate } from "react-router-dom";
 
 function Collection() {
+  const navigate = useNavigate();
+
   const [Category, setCategory] = useState(false);
   const [viewmore, setViewmore] = useState(false);
   const [size, setSize] = useState(false);
@@ -18,6 +21,7 @@ function Collection() {
   const sizetogg = () => {
     setSize(!size);
   };
+
   return (
     <div>
       <div className="h-36 bg-white">
@@ -359,8 +363,9 @@ function Collection() {
                 <img
                   src={items.image}
                   className="Image self-stretch h-[392px] w-[329px]"
+                  onClick={()=>navigate('/productinfo')}
                 />
-                <div className="TagPrice relative -top-1/2 px-1.5 py-1 bg-white justify-center items-center gap-2.5 inline-flex">
+                <div className="  px-1.5 py-1 bg-white justify-center items-center gap-2.5 inline-flex">
                   <p className="Off text-center text-red-700 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
                     30% off
                   </p>
@@ -401,41 +406,8 @@ function Collection() {
           </div>
         </div>
       </section>
-      {/* <Footer /> */}
+      <Footer />
     </div>
-
-    // <div className="Product w-80 h-96 flex-col justify-start items-start gap-2.5 inline-flex">
-
-    //   <div className="Frame1 self-stretch h-12 flex-col justify-start items-start gap-0.5 flex">
-    //     <div className="Frame1 self-stretch py-2 justify-start items-start gap-3 inline-flex">
-    //       <div className="TheWaffleLongSleeveCrew grow shrink basis-0 text-neutral-800 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">The Cloud Relaxed Cardigan</div>
-    //       <div className="Frame1 justify-end items-center gap-1 flex">
-    //         <div className="60 text-right text-neutral-500 text-xs font-normal font-['Maison Neue'] line-through leading-none tracking-tight">$188</div>
-    //         <div className="60 text-right text-neutral-800 text-xs font-semibold font-['Maison Neue'] leading-none tracking-tight">$132</div>
-    //       </div>
-    //     </div>
-    //     <div className="Bone self-stretch h-4 text-neutral-500 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">Black</div>
-    //   </div>
-    //   <div className="Frame1 self-stretch justify-start items-center gap-2.5 inline-flex">
-    //     <div className="Selection w-5 h-5 relative">
-    //       <div className="Ellipse6 w-5 h-5 left-0 top-0 absolute rounded-full border border-black" />
-    //       <div className="Ellipse7 w-4 h-4 left-[2px] top-[2px] absolute bg-stone-700 rounded-full" />
-    //     </div>
-    //     <div className="Selection w-5 h-5 relative">
-    //       <div className="Ellipse6 w-5 h-5 left-0 top-0 absolute rounded-full border border-black" />
-    //       <div className="Ellipse7 w-5 h-5 left-0 top-0 absolute bg-neutral-700 rounded-full" />
-    //     </div>
-    //     <div className="Selection w-5 h-5 relative">
-    //       <div className="Ellipse6 w-5 h-5 left-0 top-0 absolute rounded-full border border-black" />
-    //       <div className="Ellipse7 w-5 h-5 left-0 top-0 absolute bg-stone-500 rounded-full" />
-    //     </div>
-    //     <div className="Selection w-5 h-5 relative">
-    //       <div className="Ellipse6 w-5 h-5 left-0 top-0 absolute rounded-full border border-black" />
-    //       <div className="Ellipse7 w-5 h-5 left-0 top-0 absolute bg-neutral-800 rounded-full" />
-    //     </div>
-    //     <div className="Selection w-5 h-5 relative" />
-    //   </div>
-    // </div>
   );
 }
 

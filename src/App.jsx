@@ -9,6 +9,7 @@ import Collection from "./components/Collections/Collection";
 import Singup from "./components/Auth/Singup";
 import Loginsign from "./components/Auth/Loginsign";
 import  { Toaster } from 'react-hot-toast';
+import ProductInfo from "./components/Collections/ProductInfo";
 
 
 const frame1Data = [
@@ -31,7 +32,8 @@ const route = createBrowserRouter([
   { path: "/collections", Component: Collection },
   { path: "/everworld-stories",Component: Everworldstories},
   { path: "/Signup",Component: Singup},
-  {path:"/login", Component:Loginsign}
+  {path:"/login", Component:Loginsign},
+  {path:"/productinfo" , Component:ProductInfo}
 ]);
 
 function App() {
