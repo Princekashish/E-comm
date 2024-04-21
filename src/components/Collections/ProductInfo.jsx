@@ -1,10 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../Header/Header";
 import { FaStar } from "react-icons/fa6";
+import { CiDeliveryTruck } from "react-icons/ci";
+import { BsBox } from "react-icons/bs";
+import { IoGiftOutline } from "react-icons/io5";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { add } from "../Redux/Featuere/Cartslice";
+import productData from "./clothscoll";
+import ScrollTop from "../Scrolltop/ScrollTop";
 
 function ProductInfo() {
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const item = useSelector((state) => state.cart);
+
+  const product = productData.find((item) => item.id === parseInt(id));
+
+  if (!product) {
+    return <div>Product not found</div>;
+  }
+  const handleadd = (product) => {
+    dispatch(add(product));
+  };
+
   return (
     <div>
+    <ScrollTop/>
       <div className="h-36 bg-white">
         <Header
           frame1={[
@@ -30,23 +53,24 @@ function ProductInfo() {
                 30% off
               </div>
             </div>
-            <img src=".\Img\image(39).png" alt="" />
+            <img src={product.image} alt="" />
+          </div>
+          {/* <div>
+          
+            <img src=".\Img\image(38).png" alt="" />
           </div>
           <div>
-            <img src=".\Img\image(39).png" alt="" />
+            <img src=".\Img\image(37).png" alt="" />
           </div>
           <div>
-            <img src=".\Img\image(39).png" alt="" />
+            <img src=".\Img\image(36).png" alt="" />
           </div>
           <div>
-            <img src=".\Img\image(39).png" alt="" />
+            <img src=".\Img\image(35).png" alt="" />
           </div>
           <div>
-            <img src=".\Img\image(39).png" alt="" />
-          </div>
-          <div>
-            <img src=".\Img\image(39).png" alt="" />
-          </div>
+            <img src=".\Img\image(34).png" alt="" />
+          </div> */}
         </div>
 
         {/* productinfodetails */}
@@ -57,15 +81,15 @@ function ProductInfo() {
             </div>
 
             <div className="Frame2 self-stretch justify-start items-start gap-2.5 inline-flex">
-              <div className="w-[260px]  grow shrink basis-0 text-black text-2xl font-normal font-['Maison Neue'] leading-loose">
-                The ReWool® Oversized Shirt Jacket
+              <div className="w-[260px]  grow shrink basis-0 text-black text-2xl font-normal font-['Maison Neue'] ">
+                {product.title}
               </div>
               <div className="justify-end items-center gap-1 flex">
                 <div className="text-neutral-500 text-sm font-normal font-['Maison Neue'] line-through leading-loose">
                   $238
                 </div>
                 <div className="text-black text-2xl font-normal font-['Maison Neue'] leading-loose">
-                  $167
+                  {product.price}
                 </div>
               </div>
             </div>
@@ -82,65 +106,161 @@ function ProductInfo() {
             </div>
           </div>
           <div>
-            <div className="Frame2 w-96 h-24 py-4 flex-col justify-start items-start gap-2.5 inline-flex">
-              <div className="Frame2 self-stretch justify-start items-start gap-3 inline-flex">
-                <p className="Color text-black text-xs font-semibold font-['Maison Neue'] leading-none tracking-tight">
+            <div className=" border-t-[1.5px] border-[#f5f4f4] mt-5 w-96 h-24 py-4 flex-col justify-start items-start gap-2.5 inline-flex">
+              <div className=" self-stretch justify-start items-start gap-3 inline-flex">
+                <p className="Color text-black text-sm font-semibold font-['Maison Neue'] leading-none tracking-tight">
                   Color
                 </p>
-                <p className="BlackOlive text-black text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
+                <p className="BlackOlive text-black text-sm font-normal font-['Maison Neue'] leading-none tracking-tight">
                   Black / Olive
                 </p>
               </div>
               <div className="Frame2 pt-3 self-stretch justify-start items-start  gap-3 inline-flex">
-                <div className="border border-black h-11 w-11 flex justify-center items-center  rounded-full">
+                <div className="border border-black h-10 w-10 flex justify-center items-center  rounded-full">
                   <div className="bg-blue-900 rounded-full h-9 w-9" />
                 </div>
                 <div className="bg-amber-900 rounded-full h-9 w-9" />
               </div>
             </div>
           </div>
-
           <div className="Frame3 w-96 h-24 py-4 flex-col justify-start items-start gap-2.5 inline-flex">
             <div className="Frame2 self-stretch justify-between items-start inline-flex">
-              <div className="Size text-black text-xs font-semibold font-['Maison Neue'] leading-none tracking-tight">
-                Size
-              </div>
-              <div className="SizeGuide text-neutral-800 text-xs font-normal font-['Maison Neue'] underline leading-none tracking-tight">
+              <p className="Size text-[#cd968c] text-sm font-semibold font-['Maison Neue'] leading-none tracking-tight">
+                Please Select a Size
+              </p>
+              <p className="SizeGuide text-neutral-800 text-sm font-normal font-['Maison Neue'] underline leading-none tracking-tight">
                 Size Guide
+              </p>
+            </div>
+            <div className=" w-full h-[56px] pt-2 self-stretch justify-center items-center gap-3 flex">
+              <button className="h-[48px] w-[48px] bg-[#F5F4F4] hover:border-black hover:border">
+                XXS
+              </button>
+              <button className="h-[48px] w-[48px] bg-[#F5F4F4] hover:border-black hover:border">
+                XS
+              </button>
+              <button className="h-[48px] w-[48px] bg-[#F5F4F4] hover:border-black hover:border">
+                S
+              </button>
+              <button className="h-[48px] w-[48px] bg-[#F5F4F4] hover:border-black hover:border">
+                M
+              </button>
+              <button className="h-[48px] w-[48px] bg-[#F5F4F4] hover:border-black hover:border">
+                L
+              </button>
+              <button className="h-[48px] w-[48px] bg-[#F5F4F4] hover:border-black hover:border">
+                XL
+              </button>
+              <button className="h-[48px] w-[48px] bg-[#F5F4F4] hover:border-black hover:border">
+                XXL
+              </button>
+            </div>
+          </div>
+          <div className="mt-5 w-[384px] h-[150px] flex justify-center items-center ">
+            <button
+              onClick={() => handleadd(product)}
+              className="h-[48px] w-[384px] bg-black text-white font-['Maison Neue'] leading-none tracking-tight"
+            >
+              ADD TO BAG
+            </button>
+          </div>
+
+          <div className="Frame2  w-96 h-72 py-6 border-t border-zinc-300 flex-col justify-start items-start gap-6 inline-flex">
+            <div className="  self-stretch justify-start  items-center gap-5 inline-flex">
+              <div className="Download w-8 h-8 relative">
+                {" "}
+                <CiDeliveryTruck size={35} />
+              </div>
+              <div className=" grow gap-1 shrink basis-0 flex-col justify-start items-start inline-flex">
+                <p className="FreeShipping self-stretch text-black text-lg font-semibold font-['Maison Neue']  ">
+                  Shipping Discount
+                </p>
+                <div className="self-stretch  ">
+                  <p className="text-black text-sm  font-normal font-['Maison Neue']  ">
+                    Return within 45 days of purchase Duties & taxes are
+                    non-refundable.{" "}
+                    <span className="text-black text-sm pl-1 font-normal font-['Maison Neue'] underline leading-none tracking-tight">
+                      Returns Details.
+                    </span>
+                  </p>
+                </div>
               </div>
             </div>
-            <div className="Frame2 self-stretch justify-start items-start gap-3 inline-flex">
-              <div className="TabButton h-10 p-3 bg-stone-100 justify-center items-center gap-2.5 flex">
-                <div className="View text-neutral-800 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
-                  XS
-                </div>
+            <div className="  self-stretch justify-start  items-center gap-5 inline-flex">
+              <div className="Download w-8 h-8 relative">
+                {" "}
+                <BsBox size={35} />
               </div>
-              <div className="TabButton h-10 p-3 bg-stone-100 justify-center items-center gap-2.5 flex">
-                <div className="View text-neutral-800 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
-                  S
-                </div>
-              </div>
-              <div className="TabButton h-10 p-3 bg-stone-100 justify-center items-center gap-2.5 flex">
-                <div className="View text-neutral-800 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
-                  M
-                </div>
-              </div>
-              <div className="TabButton h-10 p-3 bg-stone-100 justify-center items-center gap-2.5 flex">
-                <div className="View text-neutral-800 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
-                  L
-                </div>
-              </div>
-              <div className="TabButton h-10 p-3 bg-stone-100 justify-center items-center gap-2.5 flex">
-                <div className="View text-neutral-800 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
-                  XL
-                </div>
-              </div>
-              <div className="TabButton h-10 p-3 bg-stone-100 justify-center items-center gap-2.5 flex">
-                <div className="View text-neutral-800 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
-                  XXL
+              <div className=" grow gap-1 shrink basis-0 flex-col justify-start items-start inline-flex">
+                <p className="FreeShipping self-stretch text-black text-lg font-semibold font-['Maison Neue'] ">
+                  Easy Returns
+                </p>
+                <div className="self-stretch  ">
+                  <p className="text-black text-sm  font-normal font-['Maison Neue'] ">
+                    Return within 45 days of purchase Duties & taxes are
+                    non-refundable.
+                    <span className="text-black text-sm pl-1 font-normal font-['Maison Neue'] underline tracking-tight">
+                      Returns Details.
+                    </span>
+                  </p>
                 </div>
               </div>
             </div>
+            <div className="  self-stretch justify-start  items-center gap-5 inline-flex">
+              <div className="Download w-8 h-8 relative">
+                {" "}
+                <IoGiftOutline size={35} />
+              </div>
+              <div className=" grow gap-1 shrink basis-0 flex-col justify-start items-start inline-flex">
+                <p className="FreeShipping self-stretch text-black text-lg font-semibold font-['Maison Neue']  ">
+                  Send It As A Gift
+                </p>
+                <div className="self-stretch  ">
+                  <p className="text-black text-sm  font-normal font-['Maison Neue']  ">
+                    Add a free personalized note during checkout.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className=" w-[384px] h-[361px]  pt-10 pb-3 border-t border-zinc-300 flex-col justify-start items-start gap-4 inline-flex">
+            <div className=" self-stretch text-black text-base font-semibold font-['Maison Neue']  tracking-tight">
+              Part shirt, part jacket, all style.
+            </div>
+            <div className="self-stretch text-black text-sm  font-normal font-['Maison Neue']  ">
+              {product.desc}
+            </div>
+          </div>
+
+          <div className="Frame2 w-96 h-16 py-5 border-b border-zinc-300 justify-start items-center inline-flex">
+            <div className="Model w-28 text-black text-base font-semibold font-['Maison Neue'] ">
+              Model
+            </div>
+            <div className="ModelIs62WearingASizeM grow shrink basis-0 text-black text-sm font-normal font-['Maison Neue'] ">
+              Model is 6′2″, wearing a size M
+            </div>
+          </div>
+          <div className="Frame7 w-96 h-24 py-5 border-b border-zinc-300 justify-start items-start inline-flex">
+            <div className="Fit w-28 text-black text-base font-semibold font-['Maison Neue'] leading- tracking-tight">
+              Fit
+            </div>
+            <div className="QuestionsAboutFitContactUsSizeGuide grow shrink basis-0 text-black text-sm font-normal font-['Maison Neue']  tracking-wider">
+              Questions about fit?
+              <br />
+              Contact Us
+              <br />
+              Size Guide
+            </div>
+          </div>
+          <div className="Frame6 w-96 h-32 py-5 border-b border-zinc-300 flex-col justify-start items-start inline-flex">
+            <div className="Sustainability self-stretch text-black text-base font-semibold font-['Maison Neue']  tracking-tight">
+              Sustainability
+            </div>
+            <img
+              className="Screenshot20231130At5191 self-stretch h-16"
+              src=".\Img\Screenshot 2023-11-30 at 5.19 1.png"
+            />
           </div>
         </div>
       </section>

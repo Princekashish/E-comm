@@ -51,7 +51,7 @@ const navigate = useNavigate();
     }
   };
   return (
-    <div className=" bg-[url('../Img/Sectionblog.png')]   bg-cover bg-center bg-no-repeat   h-screen w-full ">
+    <div className="z bg-[url('../Img/Sectionblog.png')]   bg-cover bg-center bg-no-repeat   h-screen w-full ">
       <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 ">
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form className="space-y-6" onSubmit={submit} >

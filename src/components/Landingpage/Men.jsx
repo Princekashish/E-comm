@@ -78,11 +78,9 @@ function Men() {
   ];
   const review = [
     {
-      text:"People Are Talking",
-      
-
-    }
-  ]
+      text: "People Are Talking",
+    },
+  ];
   return (
     <div>
       <div className="h-36 bg-white">
@@ -112,14 +110,10 @@ function Men() {
                 with new winter essentials.
               </h1>
             </div>
-            <div className="w-60 py-3 bg-white hover:bg-gray-200 justify-center items-center gap-2.5 flex">
-              <Link to="/collections" className="">
-                <button className=" text-center  text-neutral-800 text-sm font-normal font-['Maison Neue'] leading-none tracking-wider">
-                  {" "}
-                  Shop Now
-                </button>
-              </Link>
-            </div>
+
+            <button className="text-center hover:duration-700 bg-white hover:bg-zinc-900 hover:text-white justify-center items-center  px-24 py-4 text-neutral-800 text-sm font-normal font-['Maison Neue'] leading-none tracking-wider">
+              <Link to="/collections">Shop Now</Link>
+            </button>
           </div>
         </div>
       </div>
@@ -159,11 +153,11 @@ function Men() {
           ].map((items, i) => (
             <div
               key={i}
-              className="gap-10  uppercase underline text-center   w-[212.69px]"
+              className="gap-10  uppercase text-center   w-[212.69px]"
             >
               {" "}
               <img className="" src={items.img} />
-              <Link to={"/collection"} className="font-['Maison Neue']">
+              <Link to={"/collection"} className="font-['Maison Neue'] hover:text-gray-500 ">
                 {items.text}{" "}
               </Link>
             </div>
@@ -176,19 +170,19 @@ function Men() {
       <div className="h-[534px]  px-[42px] flex gap-4  font-['Maison Neue'] leading-none tracking-wider ">
         <div className="bg-[url('../Img/fram1(1).png')] hover:opacity-80 flex flex-col justify-center items-center bg-cover bg-center bg-no-repeat  gap-5 h-[534px] w-[430px] ">
           <h1 className="text-white text-3xl ">The Art of Layer</h1>
-          <button className="bg-white text-sm font-normal font py-2 px-10  rounded-sm ">
+          <button className="hover:duration-700 bg-white hover:bg-zinc-900 hover:text-white text-sm font-normal font py-2 px-10  rounded-sm ">
             Shop Now
           </button>
         </div>
         <div className="bg-[url('../Img/fram1(2).png')]  hover:opacity-80 flex flex-col justify-center items-center bg-cover bg-center bg-no-repeat  gap-5 h-[534px] w-[430px] ">
           <h1 className="text-white text-3xl ">The Art of Layer</h1>
-          <button className="bg-white text-sm font-normal font py-2 px-10  rounded-sm ">
+          <button className="hover:duration-700 bg-white hover:bg-zinc-900 hover:text-white text-sm font-normal font py-2 px-10  rounded-sm ">
             Shop Now
           </button>
         </div>
         <div className="bg-[url('../Img/fram1(3).png')]  hover:opacity-80 flex flex-col justify-center items-center bg-cover bg-center bg-no-repeat  gap-5 h-[534px] w-[430px] ">
           <h1 className="text-white text-3xl ">The Art of Layer</h1>
-          <button className="bg-white text-sm font-normal font py-2 px-10  rounded-sm ">
+          <button className=" hover:duration-700 bg-white hover:bg-zinc-900 hover:text-white text-sm font-normal font py-2 px-10  rounded-sm ">
             Shop Now
           </button>
         </div>
@@ -220,7 +214,7 @@ function Men() {
             read out our progress Lorem ipsum dolor sit amet. Lorem ipsum dolor
             sit amet.{" "}
           </p>
-          <Link to={"/about"} className=" bg-white px-10  py-3">
+          <Link to={"/about"} className=" hover:duration-700 bg-white hover:bg-zinc-900 hover:text-white px-10  py-3 ">
             Lead More
           </Link>
         </div>

@@ -41,7 +41,7 @@ function Collection() {
           ]}
         />
       </div>
-      <section className="  flex max-w-[1400px] gap-5   px-10">
+      <section className="  flex max-w-full  gap-5   px-10">
         <div className=" sticky top-[176px] overflow-y-auto scroll-smooth  w-[230px]  max-h-[80vh]   py-[30px]">
           <div className="border-b h-[48px]  border-zinc-300 w-full  py-3 ">
             <h1 className="font-['Maison Neue']"> totoal Prduct </h1>
@@ -345,7 +345,7 @@ function Collection() {
             </div>
           </div>
         </div>
-        <div className="  w-[1028px] min-h-[1715px] sticky top-[176px]">
+        <div className="  w-[81vw] min-h-[1715px] sticky top-[176px]">
           <div className="w-fit h-24 pt-4 pb-2 flex-col justify-start items-start inline-flex">
             <p className="HomeMen self-stretch text-neutral-500 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
               Home / Men
@@ -357,13 +357,13 @@ function Collection() {
               Featured
             </p>
           </div>
-          <div className="overflow-hidden mt-4  grid grid-cols-3 gap-16 ">
+          <div className="overflow-hidden p-4   grid grid-cols-3 gap-16 ">
             {productData.map((items) => (
-              <div key={items.id} className="w-[329.33px] h-[483px]">
+              <div key={items.id} className="w-[329.33px] hover:shadow-xl hover:rounded-md duration-1000 hover:  h-[483px]">
                 <img
                   src={items.image}
-                  className="Image self-stretch h-[392px] w-[329px]"
-                  onClick={()=>navigate('/productinfo')}
+                  className="Image self-stretch h-[392px]  w-[329px]"
+                  onClick={()=>navigate(`/productinfo/${items.id}`)}
                 />
                 <div className="  px-1.5 py-1 bg-white justify-center items-center gap-2.5 inline-flex">
                   <p className="Off text-center text-red-700 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
@@ -380,14 +380,14 @@ function Collection() {
                         $188
                       </div>
                       <div className="60 text-right text-neutral-800 text-xs font-semibold font-['Maison Neue'] leading-none tracking-tight">
-                        $132
+                       {items.price}
                       </div>
                     </div>
                   </div>
                   <div className="Bone self-stretch h-4 text-neutral-500 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
                     Black
                   </div>
-                  <div className="ColorSelection pt-3 flex gap-3">
+                  {/* <div className="ColorSelection pt-3 flex gap-3">
                     {[
                       "stone-700",
                       "neutral-700",
@@ -399,7 +399,7 @@ function Collection() {
                         className={`Selection relative w-5 h-5 border border-black rounded-full bg-${color}`}
                       />
                     ))}
-                  </div>
+                  </div> */}
                 </div>
               </div>
             ))}

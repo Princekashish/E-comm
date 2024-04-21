@@ -1,7 +1,7 @@
 const productData = [
     {
         id: 1,
-        image: 'https://i.pinimg.com/564x/3e/05/ce/3e05cefbc7eec79ac175ea8490a67939.jpg',
+        image: 'https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/85178761_da6a/mens-linen-ss-popover-shirt-black',
         title: 'Hand Painted Blue Kaushalam Tea Pot in Aluminium',
         desc: 'Shop Hand Painted Blue Kaushalam Tea Pot in Aluminium, handmade by Mrinalika Jain. Fair pricing. Ethically made. Positive impact.',
         price: 150,
@@ -10,7 +10,7 @@ const productData = [
     },
     {
         id: 2,
-        image: 'https://i.pinimg.com/736x/e4/61/f2/e461f2246b6ad93e2099d98780626396.jpg',
+        image: 'https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/76fc1e41_7f7f/mens-linen-trouser-black',
         title: 'Kaushalam kalash Copper Pot',
         desc: 'Shop Hand Painted Blue Kaushalam Tea Pot in Aluminium, handmade by Mrinalika Jain. Fair pricing. Ethically made. Positive impact.',
         price: 120,
@@ -19,7 +19,7 @@ const productData = [
     },
     {
         id: 3,
-        image: 'https://i.pinimg.com/564x/fd/50/68/fd50688767adb47aba7204f034554cbd.jpg',
+        image: 'https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/356b8d1a_afac/mens-organic-cotton-chore-jacket-navy',
         title: 'Hand Painted Blue Kaushalam Tea Pot in Aluminium',
         desc: 'Shop Hand Painted Blue Kaushalam Tea Pot in Aluminium, handmade by Mrinalika Jain. Fair pricing. Ethically made. Positive impact.',
         price: 130,
@@ -28,7 +28,7 @@ const productData = [
     },
     {
         id: 4,
-        image: 'https://i.pinimg.com/564x/22/80/8d/22808d88ada424962f2e064f3075b2d1.jpg',
+        image: 'https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/d4243525_b3d1/mens-linen-blazer-black',
         title: 'Hand Painted Blue Kaushalam Tea Pot in Aluminium',
         desc: 'Shop Hand Painted Blue Kaushalam Tea Pot in Aluminium, handmade by Mrinalika Jain. Fair pricing. Ethically made. Positive impact.',
         price: 120,
@@ -37,7 +37,7 @@ const productData = [
     },
     {
         id: 13,
-        image: 'https://i.pinimg.com/564x/3e/05/ce/3e05cefbc7eec79ac175ea8490a67939.jpg',
+        image: 'https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/7aad7f96_6edc/mens-linen-ss-popover-shirt-bone-cornstalk',
         title: 'Hand Painted Blue Kaushalam Tea Pot in Aluminium',
         desc: 'Shop Hand Painted Blue Kaushalam Tea Pot in Aluminium, handmade by Mrinalika Jain. Fair pricing. Ethically made. Positive impact.',
         price: 150,
@@ -46,7 +46,7 @@ const productData = [
     },
     {
         id: 14,
-        image: 'https://i.pinimg.com/736x/e4/61/f2/e461f2246b6ad93e2099d98780626396.jpg',
+        image: 'https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/7aad7f96_6edc/mens-linen-ss-popover-shirt-bone-cornstalk',
         title: 'Kaushalam kalash Copper Pot',
         desc: 'Shop Hand Painted Blue Kaushalam Tea Pot in Aluminium, handmade by Mrinalika Jain. Fair pricing. Ethically made. Positive impact.',
         price: 120,
@@ -55,7 +55,7 @@ const productData = [
     },
     {
         id: 15,
-        image: 'https://i.pinimg.com/564x/fd/50/68/fd50688767adb47aba7204f034554cbd.jpg',
+        image: 'https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/7aad7f96_6edc/mens-linen-ss-popover-shirt-bone-cornstalk',
         title: 'Hand Painted Blue Kaushalam Tea Pot in Aluminium',
         desc: 'Shop Hand Painted Blue Kaushalam Tea Pot in Aluminium, handmade by Mrinalika Jain. Fair pricing. Ethically made. Positive impact.',
         price: 130,
@@ -64,7 +64,7 @@ const productData = [
     },
     {
         id: 16,
-        image: 'https://i.pinimg.com/564x/22/80/8d/22808d88ada424962f2e064f3075b2d1.jpg',
+        image:'https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/7aad7f96_6edc/mens-linen-ss-popover-shirt-bone-cornstalk',
         title: 'Hand Painted Blue Kaushalam Tea Pot in Aluminium',
         desc: 'Shop Hand Painted Blue Kaushalam Tea Pot in Aluminium, handmade by Mrinalika Jain. Fair pricing. Ethically made. Positive impact.',
         price: 120,
@@ -73,7 +73,7 @@ const productData = [
     },
     {
         id: 5,
-        image: 'https://i.pinimg.com/564x/3e/05/ce/3e05cefbc7eec79ac175ea8490a67939.jpg',
+        image: 'https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/7aad7f96_6edc/mens-linen-ss-popover-shirt-bone-cornstalk',
         title: 'Hand Painted Blue Kaushalam Tea Pot in Aluminium',
         desc: 'Shop Hand Painted Blue Kaushalam Tea Pot in Aluminium, handmade by Mrinalika Jain. Fair pricing. Ethically made. Positive impact.',
         price: 150,
@@ -82,7 +82,7 @@ const productData = [
     },
     {
         id: 6,
-        image: 'https://i.pinimg.com/736x/e4/61/f2/e461f2246b6ad93e2099d98780626396.jpg',
+        image: 'https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/7aad7f96_6edc/mens-linen-ss-popover-shirt-bone-cornstalk',
         title: 'Kaushalam kalash Copper Pot',
         desc: 'Shop Hand Painted Blue Kaushalam Tea Pot in Aluminium, handmade by Mrinalika Jain. Fair pricing. Ethically made. Positive impact.',
         price: 120,
@@ -91,7 +91,7 @@ const productData = [
     },
     {
         id: 7,
-        image: 'https://i.pinimg.com/564x/fd/50/68/fd50688767adb47aba7204f034554cbd.jpg',
+        image:'https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/7aad7f96_6edc/mens-linen-ss-popover-shirt-bone-cornstalk',
         title: 'Hand Painted Blue Kaushalam Tea Pot in Aluminium',
         desc: 'Shop Hand Painted Blue Kaushalam Tea Pot in Aluminium, handmade by Mrinalika Jain. Fair pricing. Ethically made. Positive impact.',
         price: 130,
@@ -100,7 +100,7 @@ const productData = [
     },
     {
         id: 8,
-        image: 'https://i.pinimg.com/564x/22/80/8d/22808d88ada424962f2e064f3075b2d1.jpg',
+        image: 'https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/7aad7f96_6edc/mens-linen-ss-popover-shirt-bone-cornstalk',
         title: 'Hand Painted Blue Kaushalam Tea Pot in Aluminium',
         desc: 'Shop Hand Painted Blue Kaushalam Tea Pot in Aluminium, handmade by Mrinalika Jain. Fair pricing. Ethically made. Positive impact.',
         price: 120,
@@ -109,7 +109,7 @@ const productData = [
     },
     {
         id: 9,
-        image: 'https://i.pinimg.com/564x/3e/05/ce/3e05cefbc7eec79ac175ea8490a67939.jpg',
+        image: 'https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/7aad7f96_6edc/mens-linen-ss-popover-shirt-bone-cornstalk',
         title: 'Hand Painted Blue Kaushalam Tea Pot in Aluminium',
         desc: 'Shop Hand Painted Blue Kaushalam Tea Pot in Aluminium, handmade by Mrinalika Jain. Fair pricing. Ethically made. Positive impact.',
         price: 150,
@@ -118,7 +118,7 @@ const productData = [
     },
     {
         id: 10,
-        image: 'https://i.pinimg.com/736x/e4/61/f2/e461f2246b6ad93e2099d98780626396.jpg',
+        image: 'https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/7aad7f96_6edc/mens-linen-ss-popover-shirt-bone-cornstalk',
         title: 'Kaushalam kalash Copper Pot',
         desc: 'Shop Hand Painted Blue Kaushalam Tea Pot in Aluminium, handmade by Mrinalika Jain. Fair pricing. Ethically made. Positive impact.',
         price: 120,
@@ -127,7 +127,7 @@ const productData = [
     },
     {
         id: 11,
-        image: 'https://i.pinimg.com/564x/fd/50/68/fd50688767adb47aba7204f034554cbd.jpg',
+        image:'https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/7aad7f96_6edc/mens-linen-ss-popover-shirt-bone-cornstalk',
         title: 'Hand Painted Blue Kaushalam Tea Pot in Aluminium',
         desc: 'Shop Hand Painted Blue Kaushalam Tea Pot in Aluminium, handmade by Mrinalika Jain. Fair pricing. Ethically made. Positive impact.',
         price: 130,
@@ -136,7 +136,7 @@ const productData = [
     },
     {
         id: 12,
-        image: 'https://i.pinimg.com/564x/22/80/8d/22808d88ada424962f2e064f3075b2d1.jpg',
+        image: 'https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/7aad7f96_6edc/mens-linen-ss-popover-shirt-bone-cornstalk',
         title: 'Hand Painted Blue Kaushalam Tea Pot in Aluminium',
         desc: 'Shop Hand Painted Blue Kaushalam Tea Pot in Aluminium, handmade by Mrinalika Jain. Fair pricing. Ethically made. Positive impact.',
         price: 120,

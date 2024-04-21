@@ -3,9 +3,14 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { FaRegUser } from "react-icons/fa";
 import { FiShoppingCart } from "react-icons/fi";
 import { CiSearch } from "react-icons/ci";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Cart from "../Cart/Cart";
+import { AiOutlineClose } from "react-icons/ai";
+import Loginsign from "../Auth/Loginsign";
+import { useSelector } from "react-redux";
 
 function Header({ frame1 }) {
+  const item = useSelector((state) => state.cart);
   const [searchbar, setSearchBar] = useState(false);
   const [activeLink, setActiveLink] = useState("");
   const [showDropdown, setShowDropdown] = useState(false); // State to control dropdown visibility
@@ -26,6 +31,18 @@ function Header({ frame1 }) {
 
   const handleNewArrivalsLeave = () => {
     setShowDropdown(false);
+  };
+
+  const [cartOpen, setCartOpen] = useState(false);
+
+  const handleCartClick = () => {
+    setCartOpen(!cartOpen);
+  };
+
+  const [userOpen, setUserOpen] = useState(false);
+
+  const handeluserClick = () => {
+    setUserOpen(!userOpen);
   };
 
   return (
@@ -79,10 +96,10 @@ function Header({ frame1 }) {
             <img src="..\Img\Logo.png" alt="brand logo" />
           </Link>
         </div>
-        <div className="flex gap-2.5 text-lg  p-3 ">
-          <div className="text-black">
+        <div className="flex items-center  text-lg  p-4 ">
+          <div className="text-black hover:bg-gray-100 rounded-md py-2 px-3">
             <CiSearch
-              size={25}
+              size={20}
               onClick={toggleDropdown}
               className="cursor-pointer"
             />{" "}
@@ -101,20 +118,55 @@ function Header({ frame1 }) {
               {/* Add more dropdown menu items here if needed */}
             </div>
           )}
-          {[
-            {
-              text: <FaRegUser size={25} />,
-              link: "/Signup",
-            },
-            {
-              text: <FiShoppingCart size={25} />,
-              link: "/cart",
-            },
-          ].map((item, i) => (
-            <div key={i} className=" text-black">
-              <Link to={item.link}>{item.text}</Link>
+          <div
+            className="hover:bg-gray-100 rounded-md py-2 px-3"
+            onClick={handeluserClick}
+          >
+            <FaRegUser size={18} />
+          </div>
+          {userOpen && (
+            <div>
+              <div>
+                <Loginsign />
+              </div>
+              {/* <div>
+                {" "}
+                <AiOutlineClose
+                  size={20}
+                  onClick={handleCartClick}
+                  className="cursor-pointer absolute  top-5 right-5"
+                />
+              </div> */}
             </div>
-          ))}
+          )}
+          <div
+            className="text-black hover:bg-gray-100 rounded-md py-2 px-3 cursor-pointer"
+            onClick={handleCartClick}
+          >
+            <FiShoppingCart size={18} />
+            {item.length === 0 ? "" : (
+              <div className="absolute top-10 right-20 rounded-full bg-gray-500 px-1 text-white text-xs">
+                {item.length}
+              </div>
+            )}
+          </div>
+
+          {/* Render the Cart component based on cartOpen state */}
+          {cartOpen && (
+            <div>
+              <div>
+                <Cart />
+              </div>
+              <div>
+                {" "}
+                <AiOutlineClose
+                  size={20}
+                  onClick={handleCartClick}
+                  className="cursor-pointer absolute  top-5 right-5"
+                />
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
@@ -145,7 +197,7 @@ function Header({ frame1 }) {
             <div className=" font-['Maison Neue'] pt-3 ">
               <Link to="/collections">
                 {" "}
-                <h1 className="pt-3 rounded-md py-3 hover:text-2xl">
+                <h1 className="pt-3 rounded-md py-3 hover:text-zinc-400">
                   Shop All New Arrivals
                 </h1>
               </Link>

@@ -10,6 +10,7 @@ import Singup from "./components/Auth/Singup";
 import Loginsign from "./components/Auth/Loginsign";
 import  { Toaster } from 'react-hot-toast';
 import ProductInfo from "./components/Collections/ProductInfo";
+import ScrollTop from "./components/Scrolltop/ScrollTop";
 
 
 const frame1Data = [
@@ -33,13 +34,14 @@ const route = createBrowserRouter([
   { path: "/everworld-stories",Component: Everworldstories},
   { path: "/Signup",Component: Singup},
   {path:"/login", Component:Loginsign},
-  {path:"/productinfo" , Component:ProductInfo}
+  {path:"/productinfo/:id" , Component:ProductInfo}
 ]);
 
 function App() {
   return (
     <>
       <div>
+     
         <RouterProvider router={route} />
         <Toaster />
         
