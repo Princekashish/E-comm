@@ -120,32 +120,33 @@ function Header({ frame1 }) {
           )}
           <div
             className="hover:bg-gray-100 rounded-md py-2 px-3"
-            onClick={handeluserClick}
+            // onClick={handeluserClick}
           >
-            <FaRegUser size={18} />
+            <Link to='/Signup'><FaRegUser size={18} /></Link>
+
           </div>
-          {userOpen && (
+          {/* {userOpen && (
             <div>
               <div>
                 <Loginsign />
               </div>
-              {/* <div>
+              <div>
                 {" "}
                 <AiOutlineClose
                   size={20}
                   onClick={handleCartClick}
                   className="cursor-pointer absolute  top-5 right-5"
                 />
-              </div> */}
+              </div>
             </div>
-          )}
+          )} */}
           <div
             className="text-black hover:bg-gray-100 rounded-md py-2 px-3 cursor-pointer"
             onClick={handleCartClick}
           >
             <FiShoppingCart size={18} />
             {item.length === 0 ? "" : (
-              <div className="absolute top-10 right-20 rounded-full bg-gray-500 px-1 text-white text-xs">
+              <div className="absolute top-10 right-20 rounded-full bg-black px-1 text-white text-xs">
                 {item.length}
               </div>
             )}
