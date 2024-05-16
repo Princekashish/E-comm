@@ -5,6 +5,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import productData from "./clothscoll";
 import Footer from "../Footer/Footer";
 import { useNavigate } from "react-router-dom";
+import { BiFilter } from "react-icons/bi";
 
 function Collection() {
   const navigate = useNavigate();
@@ -23,8 +24,8 @@ function Collection() {
   };
 
   return (
-    <div>
-      <div className="h-36 bg-white">
+    <div className="font-['Maison Neue']">
+      <div className="h-28 bg-white">
         <Header
           frame1={[
             { text: "About", link: "/about" },
@@ -41,8 +42,8 @@ function Collection() {
           ]}
         />
       </div>
-      <section className="  flex max-w-full  gap-5   px-10">
-        <div className=" sticky top-[176px] overflow-y-auto scroll-smooth  w-[230px]  max-h-[80vh]   py-[30px]">
+      <section className="min-h-screen  flex   gap-5   ">
+        <div className="hidden sticky top-[176px] overflow-y-auto scroll-smooth  w-[230px]  max-h-[80vh]   py-[30px]">
           <div className="border-b h-[48px]  border-zinc-300 w-full  py-3 ">
             <h1 className="font-['Maison Neue']"> totoal Prduct </h1>
           </div>
@@ -345,46 +346,58 @@ function Collection() {
             </div>
           </div>
         </div>
-        <div className="  w-[81vw] min-h-[1715px] sticky top-[176px]">
-          <div className="w-fit h-24 pt-4 pb-2 flex-col justify-start items-start inline-flex">
-            <p className="HomeMen self-stretch text-neutral-500 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
+        <div className=" ">
+          <div className="space-y-2 flex flex-col justify-center items-center  min-h-[4%] ">
+            <p className=" text-neutral-500 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
               Home / Men
             </p>
-            <h1 className="self-stretch text-black text-3xl font-normal font-['Maison Neue'] leading-10">
-              Men’s Clothing & Apparel - New Arrivals
+            <h1 className=" text-black text-xl text-center font-normal leading-none font-['Maison Neue'] ">
+              Men’s Clothing & <br /> Apparel - New Arrivals
             </h1>
-            <p className="self-stretch text-black text-base font-normal font-['Maison Neue'] leading-normal tracking-wide">
+            <p className="hidden text-black text-base font-normal font-['Maison Neue'] leading-normal tracking-wide">
               Featured
             </p>
           </div>
-          <div className="overflow-hidden p-4   grid grid-cols-3 gap-16 ">
+          <div className=" flex justify-between items-center  p-4">
+            <div className="flex border px-3 py-2 border-black  justify-center items-center gap-2">
+              <h1 className="uppercase ">Filter</h1>
+              <BiFilter />
+            </div>
+            <div>
+              <h1 className="text-xs text-[#737373]">120 Products</h1>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-3  p-4 ">
             {productData.map((items) => (
-              <div key={items.id} className="w-[329.33px] hover:shadow-xl hover:rounded-md duration-1000 hover:  h-[483px]">
+              <div
+                key={items.id}
+                className=" hover:shadow-xl hover:rounded-md duration-1000 "
+              >
                 <img
                   src={items.image}
-                  className="Image self-stretch h-[392px]  w-[329px]"
-                  onClick={()=>navigate(`/productinfo/${items.id}`)}
+                  className=" "
+                  onClick={() => navigate(`/productinfo/${items.id}`)}
                 />
-                <div className="  px-1.5 py-1 bg-white justify-center items-center gap-2.5 inline-flex">
-                  <p className="Off text-center text-red-700 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
+                {/* <div className="absolute    ">
+                  <p className=" text-center text-red-700 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
                     30% off
                   </p>
-                </div>
-                <div className="Frame1 self-stretch h-12 flex-col justify-start items-start gap-0.5 flex">
-                  <div className=" self-stretch py-2 justify-start items-start gap-3 inline-flex">
-                    <p className=" grow shrink   basis-0 text-neutral-800  max-w-[233px] text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
+                </div> */}
+                <div className=" ">
+                  <div className="flex justify-between   gap-3 p-[03px]  ">
+                    <p className=" text-neutral-800 text-start   text-xs font-normal font-['Maison Neue'] leading-none ">
                       {items.title}
                     </p>
-                    <div className="Frame1 justify-end items-center gap-1 flex">
-                      <div className="60 text-right text-neutral-500 text-xs font-normal font-['Maison Neue'] line-through leading-none tracking-tight">
+                    <div className="flex justify-end ">
+                      <p className="  text-neutral-500 text-xs font-normal font-['Maison Neue'] line-through leading-none tracking-tight">
                         $188
-                      </div>
-                      <div className="60 text-right text-neutral-800 text-xs font-semibold font-['Maison Neue'] leading-none tracking-tight">
-                       {items.price}
+                      </p>
+                      <div className=" text-right text-neutral-800 text-xs font-semibold font-['Maison Neue'] leading-none tracking-tight">
+                        {items.price}
                       </div>
                     </div>
                   </div>
-                  <div className="Bone self-stretch h-4 text-neutral-500 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
+                  <div className=" p-[03px] text-neutral-500 text-xs ">
                     Black
                   </div>
                   {/* <div className="ColorSelection pt-3 flex gap-3">

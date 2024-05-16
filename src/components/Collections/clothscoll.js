@@ -2,7 +2,7 @@ const productData = [
     {
         id: 1,
         image: 'https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/85178761_da6a/mens-linen-ss-popover-shirt-black',
-        title: 'Hand Painted Blue Kaushalam Tea Pot in Aluminium',
+        title: 'Hand Painted Blue',
         desc: 'Shop Hand Painted Blue Kaushalam Tea Pot in Aluminium, handmade by Mrinalika Jain. Fair pricing. Ethically made. Positive impact.',
         price: 150,
         trendingProductName: 'Featured',

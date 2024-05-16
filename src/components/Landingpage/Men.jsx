@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Header from "../Header/Header";
 import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
@@ -8,72 +8,114 @@ import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
 import { IoEllipseOutline } from "react-icons/io5";
 import { IoEllipseSharp } from "react-icons/io5";
+import feedback from "./feedback";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { IoBagHandle } from "react-icons/io5";
+
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "none" }}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "none" }}
+      onClick={onClick}
+    />
+  );
+}
 
 function Men() {
+  const [currentItem, setCurrentItem] = useState(0);
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    centerPadding: "60px",
+    centerMode: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+  };
+  const feedbycustomer = {
+    speed: 400,
+    centerPadding: "30px",
+    infinite: true,
+    centerMode: true,
+    slidesToShow: 2,
+    slidesToScroll: 3,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+  };
+
+  const prevItem = () => {
+    setCurrentItem((prev) => (prev === 0 ? feedback.length - 1 : prev - 1));
+  };
+
+  const nextItem = () => {
+    setCurrentItem((prev) => (prev === feedback.length - 1 ? 0 : prev + 1));
+  };
+
   const shopping = [
     {
       img: "../Img/image0(31).png",
-      text: "Shirt",
+      text: "The Linen Daytripper Shirtdress",
+      price: "₹3790",
+      Newprice: "₹2790",
     },
     {
       img: "../Img/image0(32).png",
-      text: "Shirt",
+      text: "The Linen Daytripper Shirtdress",
+      price: "₹3790",
+      Newprice: "₹2790",
     },
     {
       img: "../Img/image0(33).png",
-      text: "Shirt",
+      text: "The Linen Daytripper Shirtdress",
+      price: "₹3790",
+      Newprice: "₹2790",
     },
     {
       img: "../Img/image0(34).png",
-      text: "Shirt",
+      text: "The Linen Daytripper Shirtdress",
+      price: "₹3790",
+      Newprice: "₹2790",
     },
     {
-      img: "../Img/image(32).png",
-      text: "Shirt",
+      img: "../Img/image0(31).png",
+      text: "The Linen Daytripper Shirtdress",
+      price: "₹3790",
+      Newprice: "₹2790",
     },
     {
-      img: "../Img/image(33).png",
-      text: "Shirt",
+      img: "../Img/image0(32).png",
+      text: "The Linen Daytripper Shirtdress",
+      price: "₹3790",
+      Newprice: "₹2790",
     },
     {
-      img: "../Img/image(34).png",
-      text: "Shirt",
+      img: "../Img/image0(33).png",
+      text: "The Linen Daytripper Shirtdress",
+      price: "₹3790",
+      Newprice: "₹2790",
     },
     {
-      img: "https://via.placeholder.com/213x263",
-      text: "Shirt",
-    },
-    {
-      img: "https://via.placeholder.com/213x263",
-      text: "Shirt",
-    },
-    {
-      img: "https://via.placeholder.com/213x263",
-      text: "Shirt",
-    },
-    {
-      img: "https://via.placeholder.com/213x263",
-      text: "Shirt",
-    },
-    {
-      img: "https://via.placeholder.com/213x263",
-      text: "Shirt",
-    },
-    {
-      img: "https://via.placeholder.com/213x263",
-      text: "Shirt",
-    },
-    {
-      img: "https://via.placeholder.com/213x263",
-      text: "Shirt",
-    },
-    {
-      img: "https://via.placeholder.com/213x263",
-      text: "Shirt",
-    },
-    {
-      img: "https://via.placeholder.com/213x263",
-      text: "Shirt",
+      img: "../Img/image0(34).png",
+      text: "The Linen Daytripper Shirtdress",
+      price: "₹3790",
+      Newprice: "₹2790",
     },
   ];
   const review = [
@@ -82,8 +124,8 @@ function Men() {
     },
   ];
   return (
-    <div>
-      <div className="h-36 bg-white">
+    <div className="font-['Maison Neue']  min-w-full  pt-20">
+      <div className=" bg-white">
         <Header
           frame1={[
             { text: "New Arrivals", link: "/about" },
@@ -97,40 +139,48 @@ function Men() {
           ]}
         />
       </div>
-      <div className=" bg-[url('../Img/Section01.jpg')] px-[32px] py-[270px]  bg-cover bg-center bg-no-repeat   h-screen w-full ">
-        <div className=" h-52 w-[638px]  flex justify-center items-center ">
-          <div className="self-stretch h-36 flex-col justify-start items-center gap-3.5 flex">
-            <div className="px-12">
-              <h1 className="self-stretch text-center text-white text-5xl font-normal font-['Maison Neue'] leading-10 tracking-wide">
-                Your Cozy Era
-              </h1>
-              <h1 className="self-stretch text-center text-white text-2xl font-normal font-['Maison Neue'] leading-loose">
-                Get peak comfy-chic
-                <br />
-                with new winter essentials.
-              </h1>
-            </div>
-
-            <button className="text-center hover:duration-700 bg-white hover:bg-zinc-900 hover:text-white justify-center items-center  px-24 py-4 text-neutral-800 text-sm font-normal font-['Maison Neue'] leading-none tracking-wider">
-              <Link to="/collections">Shop Now</Link>
-            </button>
+      <div className=" bg-[url('https://cdn.pixabay.com/photo/2022/12/04/07/03/woman-7633843_1280.jpg')]   md:bg-[url('https://images.unsplash.com/photo-1499939667766-4afceb292d05?q=80&w=2946&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]   bg-center bg-cover bg-no-repeat md:bg-center md:bg-cover h-[77vh] md:h-[50vh] lg:h-full  md:w-[100]">
+        <div className=" h-[77vh] md:h-[50vh] lg:h-[77vh]  bg-black/45 flex justify-center items-center flex-col ">
+          <div className=" text-center  text-white space-y-2 ">
+            <h1 className="text-lg font-['Maison Neue']">
+              Summer <span className="text-red-600">sale</span>
+            </h1>
+            <h1 className="text-5xl">
+              25% off All <br /> Linen
+            </h1>
+            <p className="text-lg font-light">
+              Explore best-selling Indian wedding-inspired styles for your
+              partner
+            </p>
           </div>
+          <Link
+            to="/collections"
+            className="flex justify-center items-center pt-8"
+          >
+            <button className=" border rounded-sm   border-white text-center hover:duration-700 text-white  hover:bg-zinc-900 md:hover:text-white justify-center items-center  px-24 py-4 md:text-neutral-800 text-sm font-normal font-['Maison Neue'] leading-none tracking-wider">
+              {" "}
+              Shop Now
+            </button>
+          </Link>
         </div>
       </div>
 
       {/* Crosolefffect by catogory  */}
-      <div className="h-[534px] pb-10 flex justify-center items-center flex-col ">
-        <h1 className="text-center py-20 font-['Maison Neue'] leading-none tracking-wider text-xl ">
-          Shop by Category
-        </h1>
-        <div className="h-[295px] w-[1316px] flex  gap-5">
+      <div className=" h-screen  md:h-1/2 pt-9 lg:pt-0  flex flex-col md:items-center md:min-w-full md:justify-between">
+        <div className=" flex justify-center items-center h-[90px] ">
+          <h1 className="text-xl leading-none tracking-tight">
+            Shop by Category
+          </h1>
+        </div>
+
+        <div className=" grid pt-5   grid-cols-2 lg:flex    md:gap-5   gap-3 ">
           {[
             {
               img: "../Img/image(36).png",
               text: "Pants",
             },
             {
-              img: "../Img/image(33).png",
+              img: "../Img/image(35).png",
               text: "Tops",
             },
             {
@@ -143,7 +193,7 @@ function Men() {
               text: "Sweaters",
             },
             {
-              img: "../Img/image(32).png",
+              img: "../Img/image(34).png",
               text: "Otherwear",
             },
             {
@@ -151,13 +201,13 @@ function Men() {
               text: "Shoes & Accercries",
             },
           ].map((items, i) => (
-            <div
-              key={i}
-              className="gap-10  uppercase text-center   w-[212.69px]"
-            >
+            <div key={i} className=" uppercase text-center   ">
               {" "}
               <img className="" src={items.img} />
-              <Link to={"/collection"} className="font-['Maison Neue'] hover:text-gray-500 ">
+              <Link
+                to={"/collection"}
+                className="underline font-['Maison Neue'] hover:text-gray-500 "
+              >
                 {items.text}{" "}
               </Link>
             </div>
@@ -167,109 +217,160 @@ function Men() {
 
       {/* newarriver */}
 
-      <div className="h-[534px]  px-[42px] flex gap-4  font-['Maison Neue'] leading-none tracking-wider ">
-        <div className="bg-[url('../Img/fram1(1).png')] hover:opacity-80 flex flex-col justify-center items-center bg-cover bg-center bg-no-repeat  gap-5 h-[534px] w-[430px] ">
-          <h1 className="text-white text-3xl ">The Art of Layer</h1>
-          <button className="hover:duration-700 bg-white hover:bg-zinc-900 hover:text-white text-sm font-normal font py-2 px-10  rounded-sm ">
-            Shop Now
-          </button>
-        </div>
-        <div className="bg-[url('../Img/fram1(2).png')]  hover:opacity-80 flex flex-col justify-center items-center bg-cover bg-center bg-no-repeat  gap-5 h-[534px] w-[430px] ">
-          <h1 className="text-white text-3xl ">The Art of Layer</h1>
-          <button className="hover:duration-700 bg-white hover:bg-zinc-900 hover:text-white text-sm font-normal font py-2 px-10  rounded-sm ">
-            Shop Now
-          </button>
-        </div>
-        <div className="bg-[url('../Img/fram1(3).png')]  hover:opacity-80 flex flex-col justify-center items-center bg-cover bg-center bg-no-repeat  gap-5 h-[534px] w-[430px] ">
-          <h1 className="text-white text-3xl ">The Art of Layer</h1>
-          <button className=" hover:duration-700 bg-white hover:bg-zinc-900 hover:text-white text-sm font-normal font py-2 px-10  rounded-sm ">
-            Shop Now
-          </button>
+      <div className=" min-h-screen pt-16 lg:pt-0 space-y-8  lg:flex lg:justify-center lg:items-center md:gap-5  ">
+        <div className="lg:flex lg:gap-5      lg:w-full  lg:justify-center">
+          <div className="bg-[url('https://images.pexels.com/photos/18390666/pexels-photo-18390666/free-photo-of-photo-of-an-affectionate-couple.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center bg-no-repeat h-[500px] md:h-[66vh] lg:w-[100%] lg:h-[100%] ">
+            <div className="h-[500px]  md:h-[66vh]  bg-black/20 flex flex-col justify-center items-center text-white">
+              <h1 className="text-3xl ">Best Dress Edit</h1>
+              <Link
+                to="/collections"
+                className="flex justify-center items-center pt-8"
+              >
+                <button className=" bg-white rounded-sm   text-center hover:duration-700 text-black  hover:bg-zinc-900 md:hover:text-white justify-center items-center px-10 uppercase py-3 md:text-neutral-800 text-sm font-normal font-['Maison Neue'] leading-none tracking-wider ">
+                  {" "}
+                  Shop Now
+                </button>
+              </Link>
+            </div>
+          </div>
+          <div className="bg-[url('https://images.pexels.com/photos/13162468/pexels-photo-13162468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center bg-no-repeat h-[500px] md:h-[66vh] lg:w-[100%] lg:h-[100%] ">
+            <div className="h-[500px] md:h-[66vh] bg-black/20 flex flex-col justify-center items-center text-white">
+              <h1 className="text-3xl ">Best Dress Edit</h1>
+              <Link
+                to="/collections"
+                className="flex justify-center items-center pt-8"
+              >
+                <button className=" bg-white rounded-sm   text-center hover:duration-700 text-black  hover:bg-zinc-900 md:hover:text-white justify-center items-center px-10 uppercase py-3 md:text-neutral-800 text-sm font-normal font-['Maison Neue'] leading-none tracking-wider">
+                  {" "}
+                  Shop Now
+                </button>
+              </Link>
+            </div>
+          </div>
+          <div className="bg-[url('https://images.pexels.com/photos/19956044/pexels-photo-19956044/free-photo-of-young-woman-in-traditional-indian-dress-in-room.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center bg-no-repeat h-[500px] md:h-[66vh] lg:w-[100%] lg:h-[100%]  ">
+            <div className="h-[500px] bg-black/25 md:h-[66vh] flex flex-col justify-center items-center text-white">
+              <h1 className="text-3xl ">Best Dress Edit</h1>
+              <Link
+                to="/collections"
+                className="flex justify-center items-center pt-8"
+              >
+                <button className=" bg-white rounded-sm   text-center hover:duration-700 text-black  hover:bg-zinc-900 md:hover:text-white justify-center items-center px-10 uppercase py-3 md:text-neutral-800 text-sm font-normal font-['Maison Neue'] leading-none tracking-wider">
+                  {" "}
+                  Shop Now
+                </button>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* everlen crosal */}
 
-      <div className="h-[817px] pb-10 flex justify-center items-center flex-col ">
-        <h1 className="text-center py-20 font-['Maison Neue'] leading-none tracking-wider text-xl">
-          Spring styles to wear together or apart—whatever the weather
-        </h1>
-        <div className="crosal h-[477px] w-[1316px] flex overflow-x-auto overflow-y-hidden gap-3 scroll-smooth">
-          {shopping.map((items, i) => (
-            <div key={i} className=" h-[461px]  min-w-[282.69px]">
-              <img className="h-[420px] w-[282px]" src={items.img} alt="img" />
-              <h1>{items.text}</h1>
-            </div>
-          ))}
+      <div className="   h-3/4  ">
+        <div className="  flex justify-center items-center p-5">
+          <h1 className="text-center  font-['Maison Neue'] leading-none tracking-tight text-lg">
+            Summer styles wedding style dress
+          </h1>
+        </div>
+
+        <div className="   ">
+          <div className="p-4">
+            <Slider {...settings} className="">
+              {shopping.map((items, i) => (
+                <div key={i} className=" p-1 ">
+                  <div className=" ">
+                    <img className="" src={items.img} />
+                  </div>
+                  <div className="pt-2  leading-none flex gap-1">
+                    <h1 className="font-light text-xs">{items.text}</h1>
+                    <p className="font-normal text-sm text-gray-400 line-through ">
+                      {items.price}
+                    </p>
+                    <p className="font-medium text-sm ">{items.Newprice}</p>
+                  </div>
+                </div>
+              ))}
+            </Slider>
+          </div>
         </div>
       </div>
 
       {/* banner*/}
-      <div className=" h-[461px] flex flex-col justify-center items-center ">
-        <div className="bg-[url('../Img/Frame1(1).png')] flex justify-center items-center flex-col font-['Maison Neue'] space-y-5 leading-none tracking-wider px-[42px] py-[90px] bg-cover bg-center bg-no-repeat h-[281px] w-[1316px]">
-          <h1 className=" text-4xl text-white">
-            We're on Misson to clean up the Industry{" "}
-          </h1>
-          <p className=" text-sm  text-white">
-            read out our progress Lorem ipsum dolor sit amet. Lorem ipsum dolor
-            sit amet.{" "}
-          </p>
-          <Link to={"/about"} className=" hover:duration-700 bg-white hover:bg-zinc-900 hover:text-white px-10  py-3 ">
-            Lead More
-          </Link>
+      <div className="min-h-[410px] flex justify-center items-center p-4">
+        <div className="bg-[url('https://images.unsplash.com/photo-1677753670021-123aba554171?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]  bg-cover bg-center bg-no-repeat h-[300px] w-[350px] sm:w-full">
+          <div className="bg-black/35 min-h-[300px] flex items-center justify-center flex-col">
+            <h1 className="text-white text-center text-xl  font-['Maison Neue'] leading-none ">
+              We're on a Mission <br /> To Clean Up the industry{" "}
+            </h1>
+            <Link to="/collections" className="p-3">
+              <button className="bg-white rounded-sm text-center hover:duration-700 text-black  hover:bg-zinc-900 md:hover:text-white justify-center items-center px-10 uppercase py-3 md:text-neutral-800 text-sm font-normal font-['Maison Neue'] leading-none tracking-wider ">
+                {" "}
+                Read
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
 
       {/* crosel */}
 
-      <div className="h-[806px] mb-10 ">
-        <div className="h-[695px]  flex justify-around items-center">
-          <FaChevronLeft className="cursor-pointer " />
-          <div className=" h-[253px] w-[530px] px-[133px] space-y-9 ">
-            <p className="self-stretch text-black text-base font-normal font-['Maison Neue'] leading-normal tracking-wide">
-              People Are Talknng
-            </p>
-            <div className="">
-              <div className="flex gap-1">
-                {[...Array(4)].map((_, index) => (
-                  <FaStar key={index} />
-                ))}
-                <FaStarHalfAlt />
-              </div>
-              <p className="self-stretch text-black text-lg font-normal font-['Maison Neue'] leading-loose">
-                "Love this shirt! Fits perfectly and <br /> the fabric is thick
-                without <br /> being stiff."
-              </p>
-            </div>
-            <p>
-              <span className="text-black text-sm font-normal font-['Maison Neue'] leading-none tracking-wider">
-                --JonSnSF .
-              </span>
-              <span className="underline text-black text-sm font-normal font-['Maison Neue'] underline leading-tight tracking-wider">
-                The Heavyweight Overshit
-              </span>
-            </p>
+      <div className="min-h-screen   justify-center relative flex flex-col overflow-hidden">
+        <div className="flex overflow-x-hidden p-4  ">
+          <h1 className="text-lg  leading-none tracking-wider absolute top-0 pt-8 ">
+            People Are Talking
+          </h1>
+          <div className=" flex justify-center items-center">
+            <button
+              className="absolute left-2 text-3xl font-extralight "
+              onClick={prevItem}
+            >
+              &lt;
+            </button>
+            <FaChevronRight
+              size={25}
+              className="absolute right-4  "
+              onClick={nextItem}
+            />
           </div>
-          <img className="h-695px] w-[530px]" src="./Img/image( 28).png" />
-          <FaChevronRight className="cursor-pointer " />
-        </div>
-        <div className=" h-[81px] flex justify-center items-center">
-          <div className="flex gap-2 text-xs">
-            {[...Array(4)].map((_, i) => (
-              <IoEllipseOutline />
-            ))}
+
+          <div className="flex   justify-center w-full  ">
+            {feedback.map((items, i) => {
+              return (
+                <div
+                  key={items.id}
+                  className={`min-w-[300px] transition-all  duration-300 ${
+                    i === currentItem ? "ml-0" : "hidden"
+                  }`}
+                >
+                  <div className="sm:flex-row-reverse sm:p-4 sm:gap-5 flex flex-col justify-center items-center">
+                    <img
+                      src={items.image}
+                      className=" w-[400px] "
+                      alt={`Feedback ${i}`}
+                    />
+                    <div className="pt-5 ">
+                      <p className="text-sm leading-none ">{items.customer}</p>
+                      <p className="text-normal leading-none pt-3">
+                        {items.text}
+                      </p>
+                      <p className="text-xs font-light pt-3">{items.place}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
 
       {/* cotten */}
-      <div className=" h-[967px] border-t border-neutral-800 flex gap-8 font-['Maison Neue'] justify-center items-center leading-none tracking-wider">
-        <div className="text-center space-y-6">
+      <div className=" flex flex-col md:flex-row gap-3 font-['Maison Neue'] justify-center items-center leading-none tracking-wider">
+        <div className="text-center p-4 space-y-6">
           <h1 className="text-2xl ">Holiday Gift Pack</h1>
           <img
-            src="../Img/image(28).png"
+            src="https://cdn.pixabay.com/photo/2019/07/28/01/31/traditional-4367791_1280.jpg"
             alt=""
-            className="h-[626px] w-[505px]"
+            className=""
           />
           <p className=" text-neutral-800 text-sm font-normal">
             The best present for everyone in your list
@@ -283,17 +384,17 @@ function Men() {
             </Link>
           </div>
         </div>
-        <div className="text-center space-y-6">
-          <h1 className="text-2xl ">Clear Fashion</h1>
+        <div className="text-center p-4 space-y-6 ">
+          <h1 className="text-2xl  ">Best Indian culture</h1>
           <img
-            src="../Img/image(29).png"
+            src="https://images.pexels.com/photos/7686122/pexels-photo-7686122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
             alt=""
-            className="h-[626px] w-[505px]"
+            className=""
           />
           <p className=" text-neutral-800 text-sm font-normal">
             The best present for everyone in your list
           </p>
-          <div className="h-12 px-5 py-3.5 justify-center items-center gap-2.5 flex">
+          <div className="h-12 px-5  justify-center items-center flex">
             <Link
               to="/about"
               className="text-center text-neutral-800 text-sm font-normal font-['Maison Neue'] underline leading-tight tracking-wider"
@@ -305,69 +406,60 @@ function Men() {
       </div>
 
       {/* everlenonyou */}
-      <div className="h-[433px] bg-gray-200 border-t border-neutral-800">
-        <div className="h-[196px] w-[1316px] px-14 pt-24 flex-col justify-start items-center gap-6 inline-flex">
-          <h1 className="self-stretch text-center text-neutral-800 text-3xl font-normal font-['Maison Neue'] leading-10">
+      <div className=" min-h-[75%] flex flex-col  p-5 ">
+        <div className=" border-t border-neutral-800 pt-5 flex-col justify-start items-center gap-6 inline-flex">
+          <h1 className="text-center text-neutral-800 text-3xl font-normal font-['Maison Neue'] leading-10">
             Everlane On You
           </h1>
-          <div className="self-stretch h-10 flex-col justify-start items-center gap-1 flex">
-            <h1 className="self-stretch text-center text-neutral-800 text-sm font-normal font-['Maison Neue'] leading-none tracking-wider">
+          <div className=" flex-col justify-start items-center gap-1 flex">
+            <h1 className="text-center text-neutral-500 text-sm font-normal font-['Maison Neue'] leading-none tracking-wider">
               Share your latest look with #EverlaneOnYou for a chance to be
               featured.
             </h1>
-            <p className="self-stretch text-center text-neutral-800 text-sm font-normal font-['Maison Neue'] underline leading-tight tracking-wider">
+            <p className="text-center pt-3 text-neutral-800 text-sm font-normal font-['Maison Neue'] underline leading-tight tracking-wider">
               Add Your Photo
             </p>
           </div>
         </div>
-        {/* croserl */}
+        <div className=" mt-12 ">
+          <Slider {...feedbycustomer} className="">
+            {shopping.map((items, i) => (
+              <div key={i} className="p-2 ">
+                <div className="absolute bg-white h-6 w-6 rounded-full flex justify-center items-center">
+                  <IoBagHandle size={15} className=" " />
+                </div>
+                <div className=" ">
+                  <img className="" src={items.img} />
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
         <div></div>
       </div>
-      {/* trustfactor */}
-      <div className="h-[337px] flex justify-center ">
-        <div className="px-[77px] py-[90px] h-[157px] w-[412px] flex-col flex justify-start items-center gap-5">
-          <img
-            src="../Img/image(302).png"
-            alt=""
-            className=" w-20 h-20 text-center"
-          />
-          <div className="w-72 h-14 flex-col justify-start items-center gap-1 inline-flex">
-            <h1 className="self-stretch text-center text-neutral-800 text-sm font-semibold font-['Maison Neue'] leading-tight tracking-wide">
-              Complimentary Shipping
-            </h1>
-            <p className="self-stretch text-center text-neutral-800 text-sm font-normal font-['Maison Neue'] leading-none tracking-wider">
-              Enjoy free shipping on U.S. orders over $100.
-            </p>
+      {/* trustfactor coloserl */}
+      <div className="h-[65vh]  p-5 flex flex-col justify-center ">
+        <div className="border-t pt-6   border-neutral-800 justify-center items-center gap-10 flex-col  flex">
+          <div className="flex flex-col justify-center items-center">
+            <img src="../Img/image(302).png" alt="" className="w-[50px] " />
+            <div className="text-center space-y-1 pt-4 text-xs">
+              <h1 className="">Complimentary Shipping</h1>
+              <p className="">Enjoy free shipping on U.S. orders over $100.</p>
+            </div>
           </div>
-        </div>
-        <div className="px-[77px] py-[90px] h-[157px] w-[412px] flex-col flex justify-start items-center gap-5">
-          <img
-            src="../Img/image(301).png"
-            alt=""
-            className=" w-20 h-20 text-center"
-          />
-          <div className="w-72 h-14 flex-col justify-start items-center gap-1 inline-flex">
-            <h1 className="self-stretch text-center text-neutral-800 text-sm font-semibold font-['Maison Neue'] leading-tight tracking-wide">
-              Complimentary Shipping
-            </h1>
-            <p className="self-stretch text-center text-neutral-800 text-sm font-normal font-['Maison Neue'] leading-none tracking-wider">
-              Enjoy free shipping on U.S. orders over $100.
-            </p>
+          <div className="flex flex-col justify-center items-center">
+            <img src="../Img/image(301).png" alt="" className=" w-[50px]" />
+            <div className="text-center space-y-1 pt-4 text-xs">
+              <h1 className="">Complimentary Shipping</h1>
+              <p className="">Enjoy free shipping on U.S. orders over $100.</p>
+            </div>
           </div>
-        </div>
-        <div className="px-[77px] py-[90px] h-[157px] w-[412px] flex-col flex justify-start items-center gap-5">
-          <img
-            src="../Img/image(300).png"
-            alt=""
-            className=" w-20 h-20 text-center"
-          />
-          <div className="w-72 h-14 flex-col justify-start items-center gap-1 inline-flex">
-            <h1 className="self-stretch text-center text-neutral-800 text-sm font-semibold font-['Maison Neue'] leading-tight tracking-wide">
-              Complimentary Shipping
-            </h1>
-            <p className="self-stretch text-center text-neutral-800 text-sm font-normal font-['Maison Neue'] leading-none tracking-wider">
-              Enjoy free shipping on U.S. orders over $100.
-            </p>
+          <div className="flex flex-col justify-center items-center">
+            <img src="../Img/image(300).png" alt="" className=" w-[50px]" />
+            <div className="text-center space-y-1 pt-4 text-xs">
+              <h1 className="">Complimentary Shipping</h1>
+              <p className="">Enjoy free shipping on U.S. orders over $100.</p>
+            </div>
           </div>
         </div>
       </div>

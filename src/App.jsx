@@ -33,7 +33,7 @@ const route = createBrowserRouter([
   { path: "/collections", Component: Collection },
   { path: "/everworld-stories",Component: Everworldstories},
   { path: "/Signup",Component: Singup},
-  {path:"/login", Component:Loginsign},
+  // {path:"/login", Component:Loginsign},
   {path:"/productinfo/:id" , Component:ProductInfo}
 ]);
 

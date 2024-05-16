@@ -10,4 +10,10 @@
   scroll-behavior: smooth;
   scrollbar-color: #8e8e8e #fff;
 }
-/* Add this CSS in your global CSS or in a CSS file that's included in your project */
+.no-scrollbar::-webkit-scrollbar{
+  display: none;
+}
+.no-scrollbar{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
