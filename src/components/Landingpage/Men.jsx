@@ -19,7 +19,7 @@ function SampleNextArrow(props) {
   return (
     <div
       className={className}
-      style={{ ...style, display: "none" }}
+      style={{ ...style, display: "none", background: "red" }}
       onClick={onClick}
     />
   );
@@ -30,34 +30,93 @@ function SamplePrevArrow(props) {
   return (
     <div
       className={className}
-      style={{ ...style, display: "none" }}
+      style={{ ...style, display: "none", background: "green" }}
       onClick={onClick}
     />
   );
 }
-
 function Men() {
   const [currentItem, setCurrentItem] = useState(0);
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    centerPadding: "60px",
-    centerMode: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-  };
-  const feedbycustomer = {
-    speed: 400,
-    centerPadding: "30px",
-    infinite: true,
-    centerMode: true,
-    slidesToShow: 2,
+    slidesToShow: 5,
     slidesToScroll: 3,
+    initialSlide: 0,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          centerPadding: "60px",
+          centerMode: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+    ],
+  };
+
+  const feedbycustomer = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 3,
+    initialSlide: 0,
+   
+
+
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          
+          centerMode: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+    ],
   };
 
   const prevItem = () => {
@@ -112,7 +171,7 @@ function Men() {
       Newprice: "₹2790",
     },
     {
-      img: "../Img/image0(34).png",
+      img: "https://static.pxlecdn.com/photos/465270264/medium/1c36168003f3d3bb8e75.jpg",
       text: "The Linen Daytripper Shirtdress",
       price: "₹3790",
       Newprice: "₹2790",
@@ -166,14 +225,14 @@ function Men() {
       </div>
 
       {/* Crosolefffect by catogory  */}
-      <div className=" h-screen  md:h-1/2 pt-9 lg:pt-0  flex flex-col md:items-center md:min-w-full md:justify-between">
+      <div className=" min-h-screen lg:min-h-[50%]  ">
         <div className=" flex justify-center items-center h-[90px] ">
           <h1 className="text-xl leading-none tracking-tight">
             Shop by Category
           </h1>
         </div>
 
-        <div className=" grid pt-5   grid-cols-2 lg:flex    md:gap-5   gap-3 ">
+        <div className="grid   grid-cols-2 gap-7 lg:flex  content-center ">
           {[
             {
               img: "../Img/image(36).png",
@@ -201,14 +260,13 @@ function Men() {
               text: "Shoes & Accercries",
             },
           ].map((items, i) => (
-            <div key={i} className=" uppercase text-center   ">
-              {" "}
-              <img className="" src={items.img} />
+            <div key={i} className="flex flex-col uppercase text-center">
+              <img className="mb-2" src={items.img} alt={items.text} />
               <Link
-                to={"/collection"}
-                className="underline font-['Maison Neue'] hover:text-gray-500 "
+                to="/collection"
+                className="underline font-['Maison Neue'] text-lg hover:text-gray-500"
               >
-                {items.text}{" "}
+                {items.text}
               </Link>
             </div>
           ))}
@@ -218,8 +276,8 @@ function Men() {
       {/* newarriver */}
 
       <div className=" min-h-screen pt-16 lg:pt-0 space-y-8  lg:flex lg:justify-center lg:items-center md:gap-5  ">
-        <div className="lg:flex lg:gap-5      lg:w-full  lg:justify-center">
-          <div className="bg-[url('https://images.pexels.com/photos/18390666/pexels-photo-18390666/free-photo-of-photo-of-an-affectionate-couple.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center bg-no-repeat h-[500px] md:h-[66vh] lg:w-[100%] lg:h-[100%] ">
+        <div className="lg:flex lg:gap-5 md:space-y-16 space-y-9 lg:space-y-0    lg:w-full  lg:justify-center">
+          <div className="bg-[url('https://images.pexels.com/photos/18390666/pexels-photo-18390666/free-photo-of-photo-of-an-affectionate-couple.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center bg-no-repeat h-[500px] md:h-[100%] lg:w-[100%]  lg:h-[100%]  ">
             <div className="h-[500px]  md:h-[66vh]  bg-black/20 flex flex-col justify-center items-center text-white">
               <h1 className="text-3xl ">Best Dress Edit</h1>
               <Link
@@ -233,7 +291,7 @@ function Men() {
               </Link>
             </div>
           </div>
-          <div className="bg-[url('https://images.pexels.com/photos/13162468/pexels-photo-13162468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center bg-no-repeat h-[500px] md:h-[66vh] lg:w-[100%] lg:h-[100%] ">
+          <div className="bg-[url('https://images.pexels.com/photos/13162468/pexels-photo-13162468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center bg-no-repeat h-[500px] md:h-[100%] lg:w-[100%] lg:h-[100%] ">
             <div className="h-[500px] md:h-[66vh] bg-black/20 flex flex-col justify-center items-center text-white">
               <h1 className="text-3xl ">Best Dress Edit</h1>
               <Link
@@ -247,7 +305,7 @@ function Men() {
               </Link>
             </div>
           </div>
-          <div className="bg-[url('https://images.pexels.com/photos/19956044/pexels-photo-19956044/free-photo-of-young-woman-in-traditional-indian-dress-in-room.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center bg-no-repeat h-[500px] md:h-[66vh] lg:w-[100%] lg:h-[100%]  ">
+          <div className="bg-[url('https://images.pexels.com/photos/19956044/pexels-photo-19956044/free-photo-of-young-woman-in-traditional-indian-dress-in-room.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center bg-no-repeat h-[500px] md:h-[100%] lg:w-[100%] lg:h-[100%]  ">
             <div className="h-[500px] bg-black/25 md:h-[66vh] flex flex-col justify-center items-center text-white">
               <h1 className="text-3xl ">Best Dress Edit</h1>
               <Link
@@ -273,25 +331,23 @@ function Men() {
           </h1>
         </div>
 
-        <div className="   ">
-          <div className="p-4">
-            <Slider {...settings} className="">
-              {shopping.map((items, i) => (
-                <div key={i} className=" p-1 ">
-                  <div className=" ">
-                    <img className="" src={items.img} />
-                  </div>
-                  <div className="pt-2  leading-none flex gap-1">
-                    <h1 className="font-light text-xs">{items.text}</h1>
-                    <p className="font-normal text-sm text-gray-400 line-through ">
-                      {items.price}
-                    </p>
-                    <p className="font-medium text-sm ">{items.Newprice}</p>
-                  </div>
+        <div className="">
+          <Slider {...settings} className="">
+            {shopping.map((items, i) => (
+              <div key={i} className=" p-1 ">
+                <div className=" ">
+                  <img className="" src={items.img} />
                 </div>
-              ))}
-            </Slider>
-          </div>
+                <div className="pt-2  leading-none flex gap-1">
+                  <h1 className="font-light text-xs">{items.text}</h1>
+                  <p className="font-normal text-sm text-gray-400 line-through ">
+                    {items.price}
+                  </p>
+                  <p className="font-medium text-sm ">{items.Newprice}</p>
+                </div>
+              </div>
+            ))}
+          </Slider>
         </div>
       </div>
 
@@ -421,14 +477,15 @@ function Men() {
             </p>
           </div>
         </div>
-        <div className=" mt-12 ">
+        <div className="  ">
           <Slider {...feedbycustomer} className="">
             {shopping.map((items, i) => (
-              <div key={i} className="p-2 ">
+              <div key={i} className=" lg:h-[220px] h-[180px] w-[120px] p-1">
+                
                 <div className="absolute bg-white h-6 w-6 rounded-full flex justify-center items-center">
-                  <IoBagHandle size={15} className=" " />
+                  <IoBagHandle />
                 </div>
-                <div className=" ">
+                <div className="">
                   <img className="" src={items.img} />
                 </div>
               </div>
