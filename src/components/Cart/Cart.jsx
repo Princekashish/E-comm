@@ -30,55 +30,57 @@ function Cart() {
           </div>
         </div>
       ) : (
-        <div className="fixed top-0   font-['Maison Neue']  right-0  shadow-xl  bg-white text-black  min-h-screen w-11/12">
-          <div className="p-2 pt-12 w-full  font-['Maison Neue']  text-neutral-800  ">
+        <div className="fixed top-0   font-['Maison Neue']  right-0  shadow-xl  bg-white text-black  h-screen  w-11/12">
+          <div className="p-2  pt-12 w-full overflow-hidden h-[83vh]  font-['Maison Neue']    pb-10 overflow-y-auto  text-neutral-800  ">
             <div className="text-xl p-2 font-semibold tracking-wide ">
               <h1>Your Cart</h1>
             </div>
-            <div className="flex flex-col bg-red-500     gap-7 mt-3 p-2 font-light">
+            <div className="flex flex-col  overflow-y-scroll   gap-7 mt-3 p-2 font-light">
               {item.map((ite) => (
-                <div key={ite} className="flex">
-                <div className="  w-[150px]">
-                      <img src={ite.image} alt="" />
+                <div key={ite} className="flex ">
+                  <div className="  w-[150px]">
+                    <img src={ite.image} alt="" />
+                  </div>
+                  <div className="leading-none p-2 tracking-wide text-sm flex flex-col justify-around">
+                    <div className=" w-full flex gap-3 items-center">
+                      <h1 className=" w-full">{ite.title}</h1>
+                      <MdDeleteOutline size={25} />
                     </div>
-                    <div className="leading-none p-2 tracking-wide text-sm flex flex-col justify-around">
-                      <div className=" w-full flex gap-3 items-center">
-                        <h1 className=" w-full">{ite.title}</h1>
-                        <MdDeleteOutline size={25} />
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <p>{ite.price}</p>
                       </div>
-                      <div className="flex justify-between items-center">
-                        <div>
-                          <p>{ite.price}</p>
-                        </div>
-                        <div className="flex border justify-between  px-4 gap-2 py-2">
-                          <button className="">
-                            <RiSubtractLine size={15} />
-                          </button>
-                          <h1 className="text-sm">1</h1>
-                          <button>
-                            <IoIosAdd size={15} />
-                          </button>
-                        </div>
+                      <div className="flex border justify-between  px-4 gap-2 py-2">
+                        <button className="">
+                          <RiSubtractLine size={15} />
+                        </button>
+                        <h1 className="text-sm">1</h1>
+                        <button>
+                          <IoIosAdd size={15} />
+                        </button>
                       </div>
                     </div>
+                  </div>
                 </div>
               ))}
-      
-              
             </div>
-            {/* <div className="absolute bottom-0 left-0 right-0  min-h-[20%] bg-white  shadow-2xl  ">
-              <div className="flex justify-around">
-                <h1 className="font-semibold tracking-wide leading-3">Subtotal <span className="font-light text-base">({item.length} Items)</span></h1>
-                <h2>$5609</h2>
-              </div>
-              <div className="bg-black text-white  py-3 px-3 uppercase ">
-                <h1 className="text-base">Checkout</h1>
-              </div>
-              <div className="text-xs text-center">
-                <p>psst,get it now before it sells out.</p>
-              </div>
-            </div> */}
-       
+          </div>
+          <div className="absolute bottom-14 left-0 right-0 bg-white  h-[20%]   shadow-2xl  ">
+            <div className="flex pt-5 items-center justify-around">
+              <h1 className="font-semibold tracking-wide leading-3">
+                Subtotal{" "}
+                <span className="font-light text-base">
+                  ({item.length} Items)
+                </span>
+              </h1>
+              <h2>$5609</h2>
+            </div>
+            <div className="bg-black text-white text-center m-3  py-3 px-3 uppercase ">
+              <button className="text-base">Chackout</button>
+            </div>
+            <div className="text-xs text-center">
+              <p>psst,get it now before it sells out.</p>
+            </div>
           </div>
         </div>
       )}

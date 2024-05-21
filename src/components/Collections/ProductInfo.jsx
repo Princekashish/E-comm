@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { add } from "../Redux/Featuere/Cartslice";
 import productData from "./clothscoll";
 import ScrollTop from "../Scrolltop/ScrollTop";
+import Footer from "../Footer/Footer";
 
 function ProductInfo() {
   const { id } = useParams();
@@ -27,8 +28,8 @@ function ProductInfo() {
 
   return (
     <div>
-    <ScrollTop/>
-      <div className="h-36 bg-white">
+      <ScrollTop />
+      <div className="pt-20 bg-white">
         <Header
           frame1={[
             { text: "About", link: "/about" },
@@ -45,69 +46,62 @@ function ProductInfo() {
           ]}
         />
       </div>
-      <section className="  py-3 justify-center gap-5 h-screen flex">
-        <div className="grid w-[838.039px]  gap-4 grid-cols-2">
-          <div>
-            <div className="absolute px-1.5 py-1 bg-white justify-center items-center gap-2.5 flex">
-              <div className="Off text-center text-red-700 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
-                30% off
-              </div>
-            </div>
-            <img src={product.image} alt="" />
-          </div>
-          {/* <div>
-          
-            <img src=".\Img\image(38).png" alt="" />
-          </div>
-          <div>
-            <img src=".\Img\image(37).png" alt="" />
-          </div>
-          <div>
-            <img src=".\Img\image(36).png" alt="" />
-          </div>
-          <div>
-            <img src=".\Img\image(35).png" alt="" />
-          </div>
-          <div>
-            <img src=".\Img\image(34).png" alt="" />
-          </div> */}
+      <section className=" justify-center gap-5 min-h-screen  flex flex-col lg:flex-row md:flex-row  lg:p-28 lg:pt-16 ">
+        <div className="lg:h-screen  lg:grid lg:grid-cols-2 lg:gap-2 lg:min-h-screen   ">
+          <img
+            src="https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/c66ce6a6_a8b2/womens-summer-jean-new-bone"
+            alt=""
+          />
+
+          <img
+            src="https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/0598afbd_de9d/womens-summer-jean-new-bone"
+            alt=""
+          />
+
+          <img
+            src="https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/f9fdcd03_aaeb/womens-summer-jean-new-bone"
+            alt=""
+          />
+
+          <img
+            src="https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/bc8ddbcc_1540/womens-summer-jean-new-bone"
+            alt=""
+          />
         </div>
 
         {/* productinfodetails */}
-        <div className="sticky top-[176px] w-[384px]">
+        <div className="lg:sticky lg:top-0 lg:w-[40%] pt-0 p-4 ">
           <div>
-            <div className="MenOuterwearJacketsCoats self-stretch text-neutral-500 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
+            <div className="MenOuterwearJacketsCoats  text-neutral-500 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
               Men / Outerwear - Jackets & Coats
             </div>
 
-            <div className="Frame2 self-stretch justify-start items-start gap-2.5 inline-flex">
-              <div className="w-[260px]  grow shrink basis-0 text-black text-2xl font-normal font-['Maison Neue'] ">
+            <div className=" justify-between items-start flex">
+              <div className="   text-black text-2xl font-normal font-['Maison Neue'] ">
                 {product.title}
               </div>
-              <div className="justify-end items-center gap-1 flex">
-                <div className="text-neutral-500 text-sm font-normal font-['Maison Neue'] line-through leading-loose">
-                  $238
-                </div>
-                <div className="text-black text-2xl font-normal font-['Maison Neue'] leading-loose">
-                  {product.price}
-                </div>
+              <div className=" flex  items-center gap-1">
+                <h1 className="line-through text-neutral-500 text-xs ">₹320</h1>
+                <h1 className="text-base">
+                  <span> ₹{product.price}</span>
+                </h1>
               </div>
             </div>
 
-            <div className=" w-96 h-4 justify-start items-center gap-2.5 inline-flex">
+            <div className="   justify-start items-center gap-2 inline-flex">
               <div className="Frame2 justify-start items-center gap-1 flex">
                 {[...Array(5)].map((_, i) => (
                   <FaStar key={i} size={14} />
                 ))}
               </div>
-              <div className="02Reviews w-96 text-neutral-500 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
+              <div className="  text-neutral-500 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
                 5.0 (2 Reviews)
               </div>
             </div>
           </div>
           <div>
-            <div className=" border-t-[1.5px] border-[#f5f4f4] mt-5 w-96 h-24 py-4 flex-col justify-start items-start gap-2.5 inline-flex">
-              <div className=" self-stretch justify-start items-start gap-3 inline-flex">
+            <div className="w-full border-t-[1.5px] border-[#f5f4f4] mt-5  min-h-24  flex-col justify-start items-start gap-2.5 inline-flex">
+              <div className="pt-2  justify-start items-start gap-3 inline-flex">
                 <p className="Color text-black text-sm font-semibold font-['Maison Neue'] leading-none tracking-tight">
                   Color
                 </p>
@@ -115,7 +109,7 @@ function ProductInfo() {
                   Black / Olive
                 </p>
               </div>
-              <div className="Frame2 pt-3 self-stretch justify-start items-start  gap-3 inline-flex">
+              <div className="Frame2 pt-3  justify-start items-start  gap-3 flex">
                 <div className="border border-black h-10 w-10 flex justify-center items-center  rounded-full">
                   <div className="bg-blue-900 rounded-full h-9 w-9" />
                 </div>
@@ -123,50 +117,53 @@ function ProductInfo() {
               </div>
             </div>
           </div>
-          <div className="Frame3 w-96 h-24 py-4 flex-col justify-start items-start gap-2.5 inline-flex">
-            <div className="Frame2 self-stretch justify-between items-start inline-flex">
+          <div className=" flex-col justify-start items-start  flex">
+            <div className="Frame2  justify-between items-start flex gap-2">
               <p className="Size text-[#cd968c] text-sm font-semibold font-['Maison Neue'] leading-none tracking-tight">
                 Please Select a Size
               </p>
-              <p className="SizeGuide text-neutral-800 text-sm font-normal font-['Maison Neue'] underline leading-none tracking-tight">
+              <p className=" text-neutral-800 text-sm font-normal font-['Maison Neue'] underline leading-none tracking-tight">
                 Size Guide
               </p>
             </div>
-            <div className=" w-full h-[56px] pt-2 self-stretch justify-center items-center gap-3 flex">
-              <button className="h-[48px] w-[48px] bg-[#F5F4F4] hover:border-black hover:border">
-                XXS
-              </button>
-              <button className="h-[48px] w-[48px] bg-[#F5F4F4] hover:border-black hover:border">
+            <div className=" w-full pt-5  items-center gap-2 text-xs flex">
+              <button className="w-12 py-4  rounded-lg bg-[#F5F4F4] hover:bg-black hover:text-white">
                 XS
               </button>
-              <button className="h-[48px] w-[48px] bg-[#F5F4F4] hover:border-black hover:border">
+              <button className="w-12 py-4 rounded-lg  bg-[#F5F4F4] hover:bg-black hover:text-white">
                 S
               </button>
-              <button className="h-[48px] w-[48px] bg-[#F5F4F4] hover:border-black hover:border">
+              <button className="w-12 py-4 rounded-lg  bg-[#F5F4F4] hover:bg-black hover:text-white">
                 M
               </button>
-              <button className="h-[48px] w-[48px] bg-[#F5F4F4] hover:border-black hover:border">
+              <button className="w-12 py-4 rounded-lg  bg-[#F5F4F4] hover:bg-black hover:text-white">
                 L
               </button>
-              <button className="h-[48px] w-[48px] bg-[#F5F4F4] hover:border-black hover:border">
+              <button className="w-12 py-4 rounded-lg  bg-[#F5F4F4] hover:bg-black hover:text-white">
                 XL
               </button>
-              <button className="h-[48px] w-[48px] bg-[#F5F4F4] hover:border-black hover:border">
+              <button className="w-12 py-4 rounded-lg  bg-[#F5F4F4] hover:bg-black hover:text-white">
                 XXL
               </button>
             </div>
           </div>
-          <div className="mt-5 w-[384px] h-[150px] flex justify-center items-center ">
+          <div className=" flex  pt-5 gap-5 items-center  ">
             <button
               onClick={() => handleadd(product)}
-              className="h-[48px] w-[384px] bg-black text-white font-['Maison Neue'] leading-none tracking-tight"
+              className="w-full py-3  bg-yellow-400 rounded-lg font-['Maison Neue'] leading-none tracking-tight"
             >
-              ADD TO BAG
+              Add to Bag
+            </button>
+            <button
+              onClick={() => handleadd(product)}
+              className="w-full py-3  bg-black text-white rounded-lg font-['Maison Neue'] leading-none tracking-tight"
+            >
+              Buy Now
             </button>
           </div>
 
-          <div className="Frame2  w-96 h-72 py-6 border-t border-zinc-300 flex-col justify-start items-start gap-6 inline-flex">
-            <div className="  self-stretch justify-start  items-center gap-5 inline-flex">
+          <div className="mt-5 pt-10 border-t border-zinc-300 flex-col justify-start items-start gap-6 inline-flex">
+            <div className="   justify-start  items-center gap-5 inline-flex">
               <div className="Download w-8 h-8 relative">
                 {" "}
                 <CiDeliveryTruck size={35} />
@@ -224,7 +221,7 @@ function ProductInfo() {
             </div>
           </div>
 
-          <div className=" w-[384px] h-[361px]  pt-10 pb-3 border-t border-zinc-300 flex-col justify-start items-start gap-4 inline-flex">
+          <div className="  h-[361px]  pt-10 pb-3 border-t border-zinc-300 flex-col justify-start items-start gap-4 inline-flex">
             <div className=" self-stretch text-black text-base font-semibold font-['Maison Neue']  tracking-tight">
               Part shirt, part jacket, all style.
             </div>
@@ -233,7 +230,7 @@ function ProductInfo() {
             </div>
           </div>
 
-          <div className="Frame2 w-96 h-16 py-5 border-b border-zinc-300 justify-start items-center inline-flex">
+          <div className="Frame2  h-16 py-5 border-b border-zinc-300 justify-start items-center inline-flex">
             <div className="Model w-28 text-black text-base font-semibold font-['Maison Neue'] ">
               Model
             </div>
@@ -241,7 +238,7 @@ function ProductInfo() {
               Model is 6′2″, wearing a size M
             </div>
           </div>
-          <div className="Frame7 w-96 h-24 py-5 border-b border-zinc-300 justify-start items-start inline-flex">
+          <div className="Frame7  h-24 py-5 border-b border-zinc-300 justify-start items-start inline-flex">
             <div className="Fit w-28 text-black text-base font-semibold font-['Maison Neue'] leading- tracking-tight">
               Fit
             </div>
@@ -253,7 +250,7 @@ function ProductInfo() {
               Size Guide
             </div>
           </div>
-          <div className="Frame6 w-96 h-32 py-5 border-b border-zinc-300 flex-col justify-start items-start inline-flex">
+          <div className="Frame6  h-32 py-5 border-b border-zinc-300 flex-col justify-start items-start inline-flex">
             <div className="Sustainability self-stretch text-black text-base font-semibold font-['Maison Neue']  tracking-tight">
               Sustainability
             </div>
@@ -264,6 +261,7 @@ function ProductInfo() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

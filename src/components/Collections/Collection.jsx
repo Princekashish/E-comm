@@ -6,9 +6,11 @@ import productData from "./clothscoll";
 import Footer from "../Footer/Footer";
 import { useNavigate } from "react-router-dom";
 import { BiFilter } from "react-icons/bi";
+import { useSelector } from "react-redux";
 
 function Collection() {
   const navigate = useNavigate();
+  const item = useSelector((state) => state.cart);
 
   const [Category, setCategory] = useState(false);
   const [viewmore, setViewmore] = useState(false);
@@ -42,23 +44,24 @@ function Collection() {
           ]}
         />
       </div>
-      <section className="min-h-screen  flex   gap-5   ">
-        <div className="hidden sticky top-[176px] overflow-y-auto scroll-smooth  w-[230px]  max-h-[80vh]   py-[30px]">
-          <div className="border-b h-[48px]  border-zinc-300 w-full  py-3 ">
-            <h1 className="font-['Maison Neue']"> totoal Prduct </h1>
+      <section className="min-h-screen  flex lg:p-28  lg:pt-3 gap-5   ">
+        <div className="hidden lg:block sticky top-28 overflow-y-auto scroll-smooth lg:w-[35%] h-[100vh]  ">
+          <div className="border-b  flex text-xs py-3 gap-[2px] border-zinc-300 ">
+            <h1 className="font-['Maison Neue']"> {item.length} </h1>
+            <p>Products</p>
           </div>
-          <div className="flex h-[53px] justify-between items-center py-3">
+          <div className="  flex justify-between text-xs py-2 items-center ">
             <h1 className="font-['Maison Neue']">Category</h1>
             <h1>
               {Category ? (
                 <MdKeyboardArrowDown
-                  size={25}
+                  size={15}
                   className="cursor-pointer font-['Maison Neue']"
                   onClick={Categorytogg}
                 />
               ) : (
                 <MdKeyboardArrowUp
-                  size={25}
+                  size={15}
                   className="cursor-pointer font-['Maison Neue']"
                   onClick={Categorytogg}
                 />
@@ -68,82 +71,57 @@ function Collection() {
           {/* Category list */}
           <div
             className={`${
-              viewmore ? "min-h-[50vh]" : ""
-            } flex flex-col gap-5 items-center w-[196px] h-[169px] overflow-hidden ${
+              viewmore ? "h-[30%]" : ""
+            } flex flex-col gap-5  items-center  h-[169px] overflow-hidden ${
               Category ? "hidden" : ""
             }`}
           >
-            <div className="w-48 h-8 justify-start items-center gap-2 inline-flex">
-              <input
-                type="checkbox"
-                className="w-8 h-8 bg-white rounded border border-black checked:bg-blue-300"
-              />
-              <h1 className="grow shrink basis-0 text-black text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
-                Everyone - All Gender Collection
-              </h1>
-            </div>
-            <div className="w-48 h-8 justify-start items-center gap-2 inline-flex">
-              <input
-                type="checkbox"
-                className="w-8 h-8 bg-white rounded border border-black checked:bg-blue-300"
-              />
-              <h1 className="grow shrink basis-0 text-black text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
-                Everyone - All Gender Collection
-              </h1>
-            </div>
-            <div className="w-48 h-8 justify-start items-center gap-2 inline-flex">
-              <input
-                type="checkbox"
-                className="w-8 h-8 bg-white rounded border border-black checked:bg-blue-300"
-              />
-              <h1 className="grow shrink basis-0 text-black text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
-                Everyone - All Gender Collection
-              </h1>
-            </div>
-            <div className="w-48 h-8 justify-start items-center gap-2 inline-flex">
-              <input
-                type="checkbox"
-                className="w-8 h-8 bg-white rounded border border-black checked:bg-blue-300"
-              />
-              <h1 className="grow shrink basis-0 text-black text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
-                Everyone - All Gender Collection
-              </h1>
-            </div>
-            <div className="w-48 h-8 justify-start items-center gap-2 inline-flex">
-              <input
-                type="checkbox"
-                className="w-8 h-8 bg-white rounded border border-black checked:bg-blue-300"
-              />
-              <h1 className="grow shrink basis-0 text-black text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
-                Everyone - All Gender Collection
-              </h1>
-            </div>
-            <div className="w-48 h-8 justify-start items-center gap-2 inline-flex">
-              <input
-                type="checkbox"
-                className="w-8 h-8 bg-white rounded border border-black checked:bg-blue-300"
-              />
-              <h1 className="grow shrink basis-0 text-black text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
-                Everyone - All Gender Collection
-              </h1>
-            </div>
-            <div className="w-48 h-8 justify-start items-center gap-2 inline-flex">
-              <input
-                type="checkbox"
-                className="w-8 h-8 bg-white rounded border border-black checked:bg-blue-300"
-              />
-              <h1 className="grow shrink basis-0 text-black text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
-                Everyone - All Gender Collection
-              </h1>
-            </div>
-            <div className="w-48 h-8 justify-start items-center gap-2 inline-flex">
-              <input
-                type="checkbox"
-                className="w-8 h-8 bg-white rounded border border-black checked:bg-blue-300"
-              />
-              <h1 className="grow shrink basis-0 text-black text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
-                Everyone - All Gender Collection
-              </h1>
+            <div className="w-full min-h-[50%]  gap-2 ">
+              <div className="flex justify-center items-center gap-2">
+                <input
+                  type="checkbox"
+                  className="w-4 h-8 bg-white rounded border border-black checked:bg-blue-300"
+                />
+                <h1 className="grow shrink basis-0 text-black text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
+                  Shirt
+                </h1>
+              </div>
+              <div className="flex justify-center items-center gap-2">
+                <input
+                  type="checkbox"
+                  className="w-4 h-8 bg-white rounded border border-black checked:bg-blue-300"
+                />
+                <h1 className="grow shrink basis-0 text-black text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
+                  Shirt
+                </h1>
+              </div>
+              <div className="flex justify-center items-center gap-2">
+                <input
+                  type="checkbox"
+                  className="w-4 h-8 bg-white rounded border border-black checked:bg-blue-300"
+                />
+                <h1 className="grow shrink basis-0 text-black text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
+                  Shirt
+                </h1>
+              </div>
+              <div className="flex justify-center items-center gap-2">
+                <input
+                  type="checkbox"
+                  className="w-4 h-8 bg-white rounded border border-black checked:bg-blue-300"
+                />
+                <h1 className="grow shrink basis-0 text-black text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
+                  Shirt
+                </h1>
+              </div>
+              <div className="flex justify-center items-center gap-2">
+                <input
+                  type="checkbox"
+                  className="w-4 h-8 bg-white rounded border border-black checked:bg-blue-300"
+                />
+                <h1 className="grow shrink basis-0 text-black text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
+                  Shirt
+                </h1>
+              </div>
             </div>
           </div>
           <div className="py-3 font-['Maison Neue'] text-xs">
@@ -156,66 +134,66 @@ function Collection() {
           </div>
 
           {/* color */}
-          <div className=" font-['Maison Neue']  w-[196px] h-[50px] ">
+          <div className=" font-['Maison Neue'] text-sm   py-3 ">
             <h1>Color</h1>
           </div>
-          <div className="Frame2  w-48 h-44 flex-col flex gap-3 justify-center items-center">
-            <div className="flex justify-between  w-full">
+          <div className=" w-full flex-col flex text-xs  gap-2 pl-5 justify-center items-center">
+            <div className="flex justify-between   w-full">
               <div className="flex flex-col justify-center items-center">
-                <div className="w-8 h-8 rounded-full bg-zinc-900 border-gray-200 border-3 hover:border-black hover:border-1" />
-                <h1 className="text-sm  font-['Maison Neue']  tracking-tight">
+                <div className="w-6 h-6 rounded-full bg-zinc-900 border-3 hover:border-black hover:border-1" />
+                <h1 className=" font-['Maison Neue']  tracking-tight">
                   Black
                 </h1>
               </div>
               <div className="flex flex-col justify-center items-center">
-                <div className="w-8 h-8 rounded-full bg-white border-black border-2 hover:border-black hover:border-1" />
-                <h1 className="text-sm  font-['Maison Neue'] tracking-tight">
+                <div className="w-6 h-6 rounded-full bg-white  border-[1px] hover:border-black hover:border-1" />
+                <h1 className=" font-['Maison Neue'] tracking-tight">
                   White
                 </h1>
               </div>
               <div className="flex flex-col justify-center items-center">
-                <div className="w-8 h-8 rounded-full bg-blue-900  border-gray-200 border-2 hover:border-black hover:border-1" />
-                <h1 className="text-sm  font-['Maison Neue'] tracking-tight">
+                <div className="w-6 h-6 rounded-full bg-blue-900   border-[1px] hover:border-black hover:border-1" />
+                <h1 className=" font-['Maison Neue'] tracking-tight">
                   Blue
                 </h1>
               </div>
             </div>
             <div className="flex justify-between   w-full">
               <div className="flex flex-col justify-center items-center">
-                <div className="w-8 h-8 rounded-full bg-pink-900  border-gray-200 border-2 hover:border-black hover:border-1" />
-                <h1 className="text-sm  font-['Maison Neue']  tracking-tight">
+                <div className="w-6 h-6 rounded-full bg-pink-900  border-[1px] hover:border-black hover:border-1" />
+                <h1 className=" font-['Maison Neue']  tracking-tight">
                   Pink
                 </h1>
               </div>
               <div className="flex flex-col justify-center items-center">
-                <div className="w-8 h-8 rounded-full bg-yellow-800  border-gray-200 border-2 hover:border-black hover:border-1" />
-                <h1 className="text-sm  font-['Maison Neue'] tracking-tight">
+                <div className="w-6 h-6 rounded-full bg-yellow-400  border-[1px] hover:border-black hover:border-1" />
+                <h1 className=" font-['Maison Neue'] tracking-tight">
                   Brown
                 </h1>
               </div>
               <div className="flex flex-col justify-center items-center">
-                <div className="w-8 h-8 rounded-full bg-stone-600  border-gray-200 border-2 hover:border-black hover:border-1" />
-                <h1 className="text-sm  font-['Maison Neue'] tracking-tight">
+                <div className="w-6 h-6 rounded-full bg-stone-600  border-[1px] hover:border-black hover:border-1" />
+                <h1 className=" font-['Maison Neue'] tracking-tight">
                   olive
                 </h1>
               </div>
             </div>
             <div className="flex justify-between   w-full">
               <div className="flex flex-col justify-center items-center">
-                <div className="w-8 h-8 rounded-full bg-zinc-200  border-gray-200 border hover:border-black hover:border-1" />
-                <h1 className="text-sm  font-['Maison Neue']  tracking-tight">
+                <div className="w-6 h-6 rounded-full bg-zinc-200  border-[1px] hover:border-black hover:border-1" />
+                <h1 className=" font-['Maison Neue']  tracking-tight">
                   Gray
                 </h1>
               </div>
               <div className="flex flex-col justify-center items-center">
-                <div className="w-8 h-8 rounded-full bg-orange-400  border-gray-200 border hover:border-black hover:border-1" />
-                <h1 className="text-sm  font-['Maison Neue'] tracking-tight">
+                <div className="w-6 h-6 rounded-full bg-orange-400  border-[1px] hover:border-black hover:border-1" />
+                <h1 className=" font-['Maison Neue'] tracking-tight">
                   Orange
                 </h1>
               </div>
               <div className="flex flex-col justify-center items-center">
-                <div className="w-8 h-8 rounded-full bg-stone-400  hover:border-black hover:border-1 border-gray-200 border-2" />
-                <h1 className="text-sm  font-['Maison Neue'] tracking-tight">
+                <div className="w-6 h-6 rounded-full bg-stone-400  border-[1px] hover:border-black hover:border-1 border-gray-200 " />
+                <h1 className=" font-['Maison Neue'] tracking-tight">
                   Tan
                 </h1>
               </div>
@@ -223,31 +201,31 @@ function Collection() {
           </div>
 
           {/* size */}
-          <div className="flex justify-between items-start py-5">
-            <h1 className="font-['Maison Neue']  ">Size</h1>
+          <div className="flex justify-between text-xs items-start py-5">
+            <h1 className="font-['Maison Neue']  text-sm">Size</h1>
             <h1 onClick={sizetogg}>
               {size ? (
                 <MdKeyboardArrowDown
                   className="cursor-pointer font-['Maison Neue']"
-                  size={25}
+                  size={15}
                 />
               ) : (
                 <MdKeyboardArrowUp
-                  size={25}
+                  size={15}
                   className="cursor-pointer font-['Maison Neue']"
                 />
               )}
             </h1>
           </div>
           <div
-            className={`Frame2 w-48 h-32 pb-6 flex-col justify-start items-start gap-2 inline-flex ${
+            className={` h-32 pb-6 flex-col justify-start items-start gap-2 flex ${
               size ? "hidden" : ""
             }`}
           >
-            <div className="Waist self-stretch text-neutral-600 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
-              Waist
+            <div className=" text-neutral-600 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
+              <p>Waist</p>
             </div>
-            <div className="Frame2 self-stretch justify-start items-start gap-1 inline-flex">
+            <div className=" justify-start items-start gap-1 flex">
               <div className="TabButton grow shrink basis-0 h-10 p-3 bg-stone-100 justify-center items-center gap-2.5 flex">
                 <div className="View text-neutral-800 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
                   36
@@ -269,7 +247,7 @@ function Collection() {
                 </div>
               </div>
             </div>
-            <div className="Frame4 self-stretch justify-start items-start gap-1 inline-flex">
+            <div className=" justify-start items-start gap-1 inline-flex">
               <div className="TabButton grow shrink basis-0 h-10 p-3 bg-stone-100 justify-center items-center gap-2.5 flex">
                 <div className="View text-neutral-800 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
                   44
@@ -293,52 +271,52 @@ function Collection() {
             </div>
           </div>
           <div
-            className={`Frame7 w-48 h-32 pb-6 flex-col justify-start items-start gap-2 inline-flex ${
+            className={`Frame7  h-32 pb-6 flex-col justify-start items-start gap-2 inline-flex ${
               size ? "hidden" : ""
             }`}
           >
-            <div className="Clothing self-stretch text-neutral-600 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
+            <div className=" text-neutral-600 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
               Clothing
             </div>
-            <div className="Frame3 self-stretch justify-start items-start gap-1 inline-flex">
+            <div className="justify-start items-start gap-1 flex">
               <div className="TabButton grow shrink basis-0 h-10 p-3 bg-stone-100 justify-center items-center gap-2.5 flex">
                 <div className="View text-neutral-800 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
                   XXS
                 </div>
               </div>
-              <div className="TabButton grow shrink basis-0 h-10 p-3 bg-stone-100 justify-center items-center gap-2.5 flex">
+              <div className=" grow shrink basis-0 h-10 p-3 bg-stone-100 justify-center items-center gap-2.5 flex">
                 <div className="View text-neutral-800 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
                   XS
                 </div>
               </div>
-              <div className="TabButton grow shrink basis-0 h-10 p-3 bg-stone-100 justify-center items-center gap-2.5 flex">
+              <div className=" grow shrink basis-0 h-10 p-3 bg-stone-100 justify-center items-center gap-2.5 flex">
                 <div className="View text-neutral-800 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
                   S
                 </div>
               </div>
-              <div className="TabButton grow shrink basis-0 h-10 p-3 bg-stone-100 justify-center items-center gap-2.5 flex">
+              <div className=" grow shrink basis-0 h-10 p-3 bg-stone-100 justify-center items-center gap-2.5 flex">
                 <div className="View text-neutral-800 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
                   M
                 </div>
               </div>
             </div>
-            <div className="Frame4 self-stretch justify-start items-start gap-1 inline-flex">
-              <div className="TabButton grow shrink basis-0 h-10 p-3 bg-stone-100 justify-center items-center gap-2.5 flex">
+            <div className=" justify-start items-start gap-1 flex">
+              <div className=" grow shrink basis-0 h-10 p-3 bg-stone-100 justify-center items-center gap-2.5 flex">
                 <div className="View text-neutral-800 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
                   L
                 </div>
               </div>
-              <div className="TabButton grow shrink basis-0 h-10 p-3 bg-stone-100 justify-center items-center gap-2.5 flex">
+              <div className=" grow shrink basis-0 h-10 p-3 bg-stone-100 justify-center items-center gap-2.5 flex">
                 <div className="View text-neutral-800 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
                   XL
                 </div>
               </div>
-              <div className="TabButton grow shrink basis-0 h-10 p-3 bg-stone-100 justify-center items-center gap-2.5 flex">
+              <div className=" grow shrink basis-0 h-10 p-3 bg-stone-100 justify-center items-center gap-2.5 flex">
                 <div className="View text-neutral-800 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
                   XXL
                 </div>
               </div>
-              <div className="TabButton grow shrink basis-0 h-10 p-3 bg-stone-100 justify-center items-center gap-2.5 flex">
+              <div className=" grow shrink basis-0 h-10 p-3 bg-stone-100 justify-center items-center gap-2.5 flex">
                 <div className="View text-neutral-800 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
                   XXXL
                 </div>
@@ -347,18 +325,18 @@ function Collection() {
           </div>
         </div>
         <div className=" ">
-          <div className="space-y-2 flex flex-col justify-center items-center  min-h-[4%] ">
+          <div className="space-y-2  lg:p-8 flex flex-col justify-center items-center  h-[4%] lg:h-[2%]  lg: lg:items-start lg:space-y-0  ">
             <p className=" text-neutral-500 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
               Home / Men
             </p>
-            <h1 className=" text-black text-xl text-center font-normal leading-none font-['Maison Neue'] ">
+            <h1 className=" text-black text-xl  text-center lg:text-start font-normal leading-none font-['Maison Neue'] ">
               Men’s Clothing & <br /> Apparel - New Arrivals
             </h1>
             <p className="hidden text-black text-base font-normal font-['Maison Neue'] leading-normal tracking-wide">
               Featured
             </p>
           </div>
-          <div className=" flex justify-between items-center  p-4">
+          <div className="lg:hidden flex justify-between items-center md:p-8  p-4">
             <div className="flex border px-3 py-2 border-black  justify-center items-center gap-2">
               <h1 className="uppercase ">Filter</h1>
               <BiFilter />
@@ -367,7 +345,7 @@ function Collection() {
               <h1 className="text-xs text-[#737373]">120 Products</h1>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-3  p-4 ">
+          <div className="grid grid-cols-2 gap-3 lg:grid-cols-3  md:grid-cols-3 md:p-8 p-4  lg:pt-2">
             {productData.map((items) => (
               <div
                 key={items.id}
