@@ -10,9 +10,9 @@ export const counterSlice = createSlice({
       state.push(action.payload);
     },
     remove: (state,actions) => {
-      return state.filter((items)=>{
+      return state.filter((items)=>
         items.id !== actions.payload
-      })
+      );
     },
     
   },

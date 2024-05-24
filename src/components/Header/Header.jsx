@@ -62,7 +62,7 @@ function Header({ frame1 }) {
   }, []);
 
   return (
-    <div className=" w-full fixed top-0 left-0 bg-white z-50     shadow-lg ">
+    <div className=" w-full fixed top-0 left-0 bg-white z-50     shadow-md ">
       {/* banner */}
       <div className={`flex  ${bgColor} justify-center items-center`}>
         <div className="lg:gap-5 flex  justify-center items-center h-9 lg:h-6 gap-1 text-xs font-['Maison Neue']">
@@ -80,9 +80,9 @@ function Header({ frame1 }) {
          <div className="lg:w-full flex items-center justify-center ">
          <Link
             to="/men"
-            className={`underline `}
+            className="font-bold"
           >
-            Shop Here
+            Under Construction****
           </Link>
          </div>
           <h1
@@ -201,8 +201,8 @@ function Header({ frame1 }) {
             {item.length === 0 ? (
               ""
             ) : (
-              <div className="absolute top-12 right-3 rounded-full bg-black px-1 text-white text-xs">
-                {item.length}
+              <div className="absolute top-12 right-3 lg:right-7 lg:top-9   rounded-full bg-black h-4 w-4 flex justify-center items-center text-white ">
+                <p className="text-[9px]">{item.length}</p>
               </div>
             )}
           </div>
@@ -218,7 +218,7 @@ function Header({ frame1 }) {
                 <AiOutlineClose
                   size={20}
                   onClick={handleCartClick}
-                  className="cursor-pointer absolute  top-5 right-5"
+                  className="cursor-pointer absolute  top-5 right-5 "
                 />
               </div>
             </div>
