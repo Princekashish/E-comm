@@ -96,7 +96,7 @@ function Header({ frame1 }) {
       </div>
 
       {/* navbar */}
-      <div onMouseLeave={handleNewArrivalsLeave} className="flex p-3 lg:h-16 justify-between" >
+      <div onMouseLeave={handleNewArrivalsLeave} className="flex p-3 lg:h-16 lg:justify-around md:justify-between md:pr-5 md:pl-5 " >
         <div className="flex justify-center items-center lg:hidden  ">
           {navabar ? (
             <AiOutlineClose
@@ -115,7 +115,7 @@ function Header({ frame1 }) {
           )}
         </div>
 
-        <div className=" text-neutral-800 hidden lg:gap-2 lg:flex lg:justify-center lg:items-center  leading-none tracking-tight font-['Maison Neue'] font-normal text-xs">
+        <div className=" text-neutral-800  hidden lg:gap-2 lg:flex lg:justify-center lg:items-center  leading-none tracking-tight font-['Maison Neue'] font-normal text-xs">
           {[
             {
               text: "Women",
@@ -141,7 +141,7 @@ function Header({ frame1 }) {
             </div>
           ))}
         </div>
-        <div className="   flex justify-center items-center pl-5  ">
+        <div className="text-center  flex items-center  ">
           <Link to="/">
             {/* <img
               src="..\Img\Logo.png"
@@ -152,7 +152,7 @@ function Header({ frame1 }) {
           </Link>
         </div>
         <div className="flex items-center lg:gap-2  text-lg  md:p-4 ">
-          <div className="text-black hover:bg-gray-100 rounded-md ">
+          <div className="text-black hover:bg-gray-100 rounded-md py-2 px-3">
             <CiSearch
               size={20}
               onClick={toggleDropdown}
@@ -201,7 +201,7 @@ function Header({ frame1 }) {
             {item.length === 0 ? (
               ""
             ) : (
-              <div className="absolute top-12 right-3 lg:right-7 lg:top-9   rounded-full bg-black h-4 w-4 flex justify-center items-center text-white ">
+              <div className="absolute top-12 right-8 lg:right-[164px] lg:top-9   rounded-full bg-black h-4 w-4 flex justify-center items-center text-white ">
                 <p className="text-[9px]">{item.length}</p>
               </div>
             )}

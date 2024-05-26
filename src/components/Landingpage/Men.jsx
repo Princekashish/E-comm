@@ -202,7 +202,7 @@ function Men() {
               Summer <span className="text-red-600">sale</span>
             </h1>
             <h1 className="text-5xl">
-              25% off All <br  className="lg:hidden"/> Linen
+              25% off All <br className="lg:hidden" /> Linen
             </h1>
             <p className="text-lg font-light">
               Explore best-selling Indian wedding-inspired styles for your
@@ -272,49 +272,47 @@ function Men() {
 
       {/* newarriver */}
 
-      <div className=" lg:h-[647px] min-h-screen bg-red-600 pt-16 lg:pt-0  space-y-8 lg:p-10 lg:flex lg:justify-center lg:items-center md:gap-5  ">
-        <div className="lg:flex lg:gap-5 md:space-y-16 space-y-9 lg:space-y-0    lg:w-full  lg:justify-center">
-          <div className="bg-[url('https://images.pexels.com/photos/18390666/pexels-photo-18390666/free-photo-of-photo-of-an-affectionate-couple.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center bg-no-repeat h-[500px] md:h-[100%] lg:w-[100%]  lg:h-[100%]  ">
-            <div className="h-[500px]  md:h-[66vh]  bg-black/20 flex flex-col justify-center items-center text-white">
-              <h1 className="text-3xl ">Best Dress Edit</h1>
-              <Link
-                to="/collections"
-                className="flex justify-center items-center pt-8"
-              >
-                <button className=" bg-white rounded-sm   text-center hover:duration-700 text-black  hover:bg-zinc-900 md:hover:text-white justify-center items-center px-10 uppercase py-3 md:text-neutral-800 text-sm font-normal font-['Maison Neue'] leading-none tracking-wider ">
-                  {" "}
-                  Shop Now
-                </button>
-              </Link>
-            </div>
+      <div className="lg:h-[548px]  flex flex-col lg:flex-row lg:justify-around lg:pl-10 lg:pr-10 gap-5 mt-4 lg:mt-0">
+        <div className="bg-[url('https://images.pexels.com/photos/18390666/pexels-photo-18390666/free-photo-of-photo-of-an-affectionate-couple.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center bg-no-repeat h-[500px] md:h-[100%] lg:w-[437px]  lg:h-[548px]  ">
+          <div className="h-[500px]  md:h-[66vh]  bg-black/20 flex flex-col justify-center items-center text-white">
+            <h1 className="text-3xl ">Best Dress Edit</h1>
+            <Link
+              to="/collections"
+              className="flex justify-center items-center pt-8"
+            >
+              <button className=" bg-white rounded-sm   text-center hover:duration-700 text-black  hover:bg-zinc-900 md:hover:text-white justify-center items-center px-10 uppercase py-3 md:text-neutral-800 text-sm font-normal font-['Maison Neue'] leading-none tracking-wider ">
+                {" "}
+                Shop Now
+              </button>
+            </Link>
           </div>
-          <div className="bg-[url('https://images.pexels.com/photos/13162468/pexels-photo-13162468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center bg-no-repeat h-[500px] md:h-[100%] lg:w-[100%] lg:h-[100%] ">
-            <div className="h-[500px] md:h-[66vh] bg-black/20 flex flex-col justify-center items-center text-white">
-              <h1 className="text-3xl ">Best Dress Edit</h1>
-              <Link
-                to="/collections"
-                className="flex justify-center items-center pt-8"
-              >
-                <button className=" bg-white rounded-sm   text-center hover:duration-700 text-black  hover:bg-zinc-900 md:hover:text-white justify-center items-center px-10 uppercase py-3 md:text-neutral-800 text-sm font-normal font-['Maison Neue'] leading-none tracking-wider">
-                  {" "}
-                  Shop Now
-                </button>
-              </Link>
-            </div>
+        </div>
+        <div className="bg-[url('https://images.unsplash.com/photo-1519306943444-3e1588e3fd23?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center bg-no-repeat h-[500px] md:h-[100%] lg:w-[437px]  lg:h-[548px]  ">
+          <div className="h-[500px]  md:h-[66vh]  bg-black/20 flex flex-col justify-center items-center text-white">
+            <h1 className="text-3xl ">Best Dress Edit</h1>
+            <Link
+              to="/collections"
+              className="flex justify-center items-center pt-8"
+            >
+              <button className=" bg-white rounded-sm   text-center hover:duration-700 text-black  hover:bg-zinc-900 md:hover:text-white justify-center items-center px-10 uppercase py-3 md:text-neutral-800 text-sm font-normal font-['Maison Neue'] leading-none tracking-wider ">
+                {" "}
+                Shop Now
+              </button>
+            </Link>
           </div>
-          <div className="bg-[url('https://images.pexels.com/photos/19956044/pexels-photo-19956044/free-photo-of-young-woman-in-traditional-indian-dress-in-room.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center bg-no-repeat h-[500px] md:h-[100%] lg:w-[100%] lg:h-[100%]  ">
-            <div className="h-[500px] bg-black/25 md:h-[66vh] flex flex-col justify-center items-center text-white">
-              <h1 className="text-3xl ">Best Dress Edit</h1>
-              <Link
-                to="/collections"
-                className="flex justify-center items-center pt-8"
-              >
-                <button className=" bg-white rounded-sm   text-center hover:duration-700 text-black  hover:bg-zinc-900 md:hover:text-white justify-center items-center px-10 uppercase py-3 md:text-neutral-800 text-sm font-normal font-['Maison Neue'] leading-none tracking-wider">
-                  {" "}
-                  Shop Now
-                </button>
-              </Link>
-            </div>
+        </div>
+        <div className="bg-[url('https://images.unsplash.com/photo-1505837070343-f0f1722298ea?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjN8fGluZGlhbiUyMGNvdXBsZSUyMGluJTIwbG92ZXxlbnwwfDF8MHx8fDA%3D')] bg-cover bg-center bg-no-repeat h-[500px] md:h-[100%] lg:w-[437px]  lg:h-[548px]  ">
+          <div className="h-[500px]  md:h-[66vh]  bg-black/20 flex flex-col justify-center items-center text-white">
+            <h1 className="text-3xl ">Best Dress Edit</h1>
+            <Link
+              to="/collections"
+              className="flex justify-center items-center pt-8"
+            >
+              <button className=" bg-white rounded-sm   text-center hover:duration-700 text-black  hover:bg-zinc-900 md:hover:text-white justify-center items-center px-10 uppercase py-3 md:text-neutral-800 text-sm font-normal font-['Maison Neue'] leading-none tracking-wider ">
+                {" "}
+                Shop Now
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -322,18 +320,21 @@ function Men() {
       {/* everlen crosal */}
 
       <div className="  h-3/4  ">
-        <div className="  flex justify-center items-center p-5 lg:p-0">
-          <h1 className="text-center  font-['Maison Neue'] leading-none tracking-tight text-lg">
+        <div className="  flex justify-center items-center p-5 lg:pt-10 ">
+          <h1 className="text-center  font-['Maison Neue']  tracking-tight text-[22px] leading-8">
             Summer styles wedding style dress
           </h1>
         </div>
 
-        <div className="lg:p-10">
+        <div className="lg:pl-10 lg:pr-10 md:pr-5 md:pl-5 ">
           <Slider {...settings} className="">
             {shopping.map((items, i) => (
               <div key={i} className=" p-1  ">
                 <div className=" ">
-                  <img className="lg:h-[357px] lg:w-[286px] object-cover" src={items.img} />
+                  <img
+                    className="lg:h-[357px] lg:w-[286px] object-cover"
+                    src={items.img}
+                  />
                 </div>
                 <div className="pt-2  leading-none flex gap-1">
                   <h1 className="font-light text-xs">{items.text}</h1>
@@ -349,11 +350,12 @@ function Men() {
       </div>
 
       {/* banner*/}
-      <div className="min-h-[410px] flex justify-center items-center p-4">
-        <div className="bg-[url('https://images.unsplash.com/photo-1677753670021-123aba554171?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]  bg-cover bg-center bg-no-repeat h-[300px] w-[350px] lg:w-[1337px] object-cover sm:w-full">
+      <div className="min-h-[410px] flex  justify-center items-center p-4 md:pr-5 md:pl-5 ">
+        <div className="bg-[url('https://images.unsplash.com/photo-1677753670021-123aba554171?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]  bg-cover bg-center bg-no-repeat h-[300px] w-[350px] lg:w-[1337px] object-cover sm:w-full ">
           <div className="bg-black/25 min-h-[300px] flex items-center justify-center flex-col ">
             <h1 className="text-white text-center text-[32px]  font-['Maison Neue'] leading-10 ">
-              We're on a Mission <br className="lg:hidden"/> To Clean Up the industry{" "}
+              We're on a Mission <br className="lg:hidden" /> To Clean Up the
+              industry{" "}
             </h1>
             <Link to="/collections" className="p-3">
               <button className="bg-white rounded-xl text-center hover:duration-700 text-black  hover:bg-zinc-900 md:hover:text-white justify-center items-center px-10 uppercase py-3 md:text-neutral-800 text-sm font-normal font-['Maison Neue'] leading-none tracking-wider ">
@@ -367,20 +369,20 @@ function Men() {
 
       {/* crosel */}
 
-      <div className="min-h-screen  lg:p-10 justify-center relative flex flex-col overflow-hidden">
-        <div className="flex overflow-x-hidden p-4 lg:border-b lg:pb-12 ">
-          <h1 className="text-lg lg:hidden leading-none tracking-wider absolute top-0 pt-8 ">
+      <div className="h-screen md:h-[50%] md:pr-5 md:pl-5  md lg:p-10 justify-center relative flex flex-col overflow-hidden">
+        <div className="flex overflow-x-hidden p-4 lg:border-b lg:pb-12  lg:w-full">
+          <h1 className="lg:text-lg text-xs lg:hidden leading-none tracking-wider absolute top-0 pt-8 ">
             People Are Talking
           </h1>
           <div className=" flex  justify-center items-center">
-            <FaChevronLeft
+            <FaChevronLeft 
               size={20}
-              className="absolute left-44  text-[12px]   "
+              className="absolute lg:left-24  left-4 text-[12px]  cursor-pointer "
               onClick={prevItem}
             />
             <FaChevronRight
               size={20}
-              className="absolute right-44 text-[12px]  leading-5"
+              className="absolute lg:right-24 right-4 text-[12px] cursor-pointer leading-5"
               onClick={nextItem}
             />
           </div>
@@ -394,18 +396,22 @@ function Men() {
                     i === currentItem ? "ml-0" : "hidden"
                   }`}
                 >
-                  <div className="sm:flex-row-reverse sm:p-4 sm:gap-5 flex flex-col justify-center items-center">
-                    <img
+                  <div className="sm:flex-row-reverse sm:p-4 sm:gap-5 flex flex-col justify-center items-center ">
+                   <div className="">
+                   <img
                       src={items.image}
                       className=" w-[400px] lg:h-[711px] lg:w-[569px] object-cover "
                       alt={`Feedback ${i}`}
                     />
-                    <div className="pt-5  lg:w-[398px] lg:h-[279px]">
-                      <p className="text-[18px] leading-6 ">{items.customer}</p>
-                      <p className="text-[24px] leading-8 pt-3">{items.text}</p>
-                      <p className="text-[16px] leading-5 font-light pt-3">
+                   </div>
+                    <div className="pt-5  lg:w-[570px] lg:h-[279px] ">
+                      <div>
+                      <p className="lg:text-[18px] text-xs text-neutral-500 leading-6 ">{items.customer}</p>
+                      <p className="lg:text-[24px]  text-sm  leading-0 lg:leading-8 pt-3">{items.text}</p>
+                      <p className="lg:text-[16px] text-xs leading-5 font-light pt-3">
                         {items.place}
                       </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -416,8 +422,8 @@ function Men() {
       </div>
 
       {/* cotten */}
-      <div className="  flex flex-col md:flex-row gap-3 font-['Maison Neue'] justify-center items-center leading-none tracking-wider">
-        <div className="text-center p-4 space-y-6 ">
+      <div className="  flex flex-col lg:flex-row md:pr-5 md:pl-5 md:gap-0 gap-3  font-['Maison Neue'] justify-center items-center leading-none tracking-wider">
+        <div className="text-center p-4 space-y-6 md:space-y-3">
           <h1 className="text-[24px] ">Holiday Gift Pack</h1>
           <img
             src="https://cdn.pixabay.com/photo/2019/07/28/01/31/traditional-4367791_1280.jpg"
@@ -458,8 +464,8 @@ function Men() {
       </div>
 
       {/* everlenonyou */}
-      <div className=" min-h-[75%] flex flex-col lg:p-10  p-5 ">
-        <div className=" border-t  pt-5 flex-col justify-start items-center gap-6 inline-flex">
+      <div className="md:pr-5 md:pl-5   min-h-[75%] flex flex-col lg:p-10  p-5 ">
+        <div className=" border-t  pt-5 flex-col justify-start items-center gap-6 flex">
           <h1 className="text-center text-neutral-800 text-3xl font-normal font-['Maison Neue'] leading-10">
             Everlane On You
           </h1>
@@ -472,25 +478,26 @@ function Men() {
               Add Your Photo
             </p>
           </div>
-        </div>
-        <div className="  pt-3">
+        </div> 
+        <div className="   ">
           <Slider {...feedbycustomer} className="">
             {shopping.map((items, i) => (
-              <div key={i} className=" lg:h-[220px] h-[180px] w-[120px] p-1">
-                <div className="absolute bg-white h-6 w-6 rounded-full flex justify-center items-center">
-                  <IoBagHandle />
+             <div key={i} className="lg:h-[323px] outline-none ">
+             <div className="relative top-9 left-3  bg-white h-6 w-6  rounded-full flex justify-center items-center">
+                  <IoBagHandle className=""/>
                 </div>
-                <div className="">
-                  <img className="object-cover" src={items.img} />
-                </div>
-              </div>
+
+             <img src={items.img} alt=""  className= " lg:h-[100%] lg:w-[100%]  object-contain"/>
+            
+
+             </div>
             ))}
           </Slider>
         </div>
         <div></div>
       </div>
       {/* trustfactor coloserl */}
-      <div className="h-[65vh] lg:h-[30vh]  p-5 flex flex-col justify-center ">
+      <div className="h-[65vh] lg:h-[30vh] md:pr-5 md:pl-5  md:h-[50%] p-5 flex flex-col justify-center ">
         <div className="border-t pt-6  lg:border-none lg:justify-around  lg:flex-row border-neutral-800 justify-center items-center gap-10 flex-col  flex">
           <div className="flex flex-col justify-center items-center">
             <img src="../Img/image(302).png" alt="" className="w-[50px] " />
