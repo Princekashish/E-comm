@@ -11,6 +11,29 @@ import { add } from "../Redux/Featuere/Cartslice";
 import productData from "./clothscoll";
 import ScrollTop from "../Scrolltop/ScrollTop";
 import Footer from "../Footer/Footer";
+import Slider from "react-slick";
+
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "none", background: "red" }}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "none", background: "green" }}
+      onClick={onClick}
+    />
+  );
+}
 
 function ProductInfo() {
   const { id } = useParams();
@@ -26,10 +49,68 @@ function ProductInfo() {
     dispatch(add(product));
   };
 
+  const productimg = [
+    {
+      id: 1,
+      img: "https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/bc8ddbcc_1540/womens-summer-jean-new-bone",
+    },
+    {
+      id: 2,
+      img: "https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/f9fdcd03_aaeb/womens-summer-jean-new-bone",
+    },
+    {
+      id: 3,
+      img: "https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/0598afbd_de9d/womens-summer-jean-new-bone",
+    },
+    {
+      id: 4,
+      img: "https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/c66ce6a6_a8b2/womens-summer-jean-new-bone",
+    },
+  ];
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+    ],
+  };
+
   return (
     <div>
       <ScrollTop />
-      <div className="pt-20 bg-white">
+      <div className="pt-20  bg-white">
         <Header
           frame1={[
             { text: "About", link: "/about" },
@@ -46,31 +127,30 @@ function ProductInfo() {
           ]}
         />
       </div>
-      <section className=" justify-center gap-5 min-h-screen  flex flex-col lg:flex-row md:flex-row  lg:p-28 lg:pt-16 ">
-        <div className="lg:h-screen  lg:grid lg:grid-cols-2 lg:gap-2 lg:min-h-screen   ">
-          <img
-            src="https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/c66ce6a6_a8b2/womens-summer-jean-new-bone"
-            alt=""
-          />
-
-          <img
-            src="https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/0598afbd_de9d/womens-summer-jean-new-bone"
-            alt=""
-          />
-
-          <img
-            src="https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/f9fdcd03_aaeb/womens-summer-jean-new-bone"
-            alt=""
-          />
-
-          <img
-            src="https://media.everlane.com/images/c_fill,w_750,ar_4:5,q_auto,dpr_1.0,f_auto,fl_progressive:steep/i/bc8ddbcc_1540/womens-summer-jean-new-bone"
-            alt=""
-          />
+      <section className=" justify-center gap-5 min-h-screen  flex flex-col lg:flex-row md:flex-col  lg:p-28 lg:pt-16 ">
+        <div className="lg:h-screen  lg:grid lg:grid-cols-2 lg:gap-2 lg:min-h-screen ">
+          <Slider {...settings} className="gap-5 lg:hidden" >
+          {productimg.map((items) => {
+            return (
+              <div key={items.id} className=" h-auto w-[]">
+                <img src={items.img} className="bg-red-500"/>
+              </div>
+            );
+          })}
+          </Slider>
+          <div className="hidden md:hidden">
+          {productimg.map((items) => {
+            return (
+              <div key={items.id} className=" h-auto w-[]">
+                <img src={items.img} className="bg-red-500"/>
+              </div>
+            );
+          })}
+          </div>
         </div>
 
         {/* productinfodetails */}
-        <div className="lg:sticky lg:top-0 lg:w-[40%] pt-0 p-4 ">
+        <div className="lg:sticky   lg:top-0 lg:w-[40%] pt-0 p-4 ">
           <div>
             <div className="MenOuterwearJacketsCoats  text-neutral-500 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
               Men / Outerwear - Jackets & Coats

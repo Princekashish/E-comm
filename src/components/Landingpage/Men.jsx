@@ -213,7 +213,7 @@ function Men() {
             to="/collections"
             className="flex justify-center items-center pt-8 "
           >
-            <button className=" border rounded-sm lg:rounded-md   border-white text-center hover:duration-700   hover:bg-zinc-900 md:hover:text-white justify-center items-center  px-24 py-4 md:text-white text-sm font-normal font-['Maison Neue'] leading-none tracking-wider">
+            <button className=" border rounded-md lg:rounded-md   border-white text-center hover:duration-700   hover:bg-zinc-900 md:hover:text-white justify-center items-center  px-24 py-4 md:text-white text-white text-sm font-normal font-['Maison Neue'] leading-none tracking-wider">
               {" "}
               Shop Now
             </button>
@@ -497,8 +497,8 @@ function Men() {
         <div></div>
       </div>
       {/* trustfactor coloserl */}
-      <div className="h-[65vh] lg:h-[30vh] md:pr-5 md:pl-5  md:h-[50%] p-5 flex flex-col justify-center ">
-        <div className="border-t pt-6  lg:border-none lg:justify-around  lg:flex-row border-neutral-800 justify-center items-center gap-10 flex-col  flex">
+      <div className="h-[65vh] lg:h-[30vh] md:pr-5 md:pl-5  md:h-[50%] p-5 flex flex-col  justify-center ">
+        <div className="border-t pt-6  lg:border-none lg:justify-around md:border-none  lg:flex-row md:flex-row border-neutral-800 justify-center items-center gap-10 flex-col  flex">
           <div className="flex flex-col justify-center items-center">
             <img src="../Img/image(302).png" alt="" className="w-[50px] " />
             <div className="text-center space-y-1 pt-4 text-xs">

@@ -7,14 +7,16 @@ import Footer from "../Footer/Footer";
 import { useNavigate } from "react-router-dom";
 import { BiFilter } from "react-icons/bi";
 import { useSelector } from "react-redux";
+import { AiOutlineClose } from "react-icons/ai";
 
 function Collection() {
   const navigate = useNavigate();
   const item = useSelector((state) => state.cart);
-
+  const [filter, setFilter] = useState(false);
   const [Category, setCategory] = useState(false);
   const [viewmore, setViewmore] = useState(false);
   const [size, setSize] = useState(false);
+
   const Categorytogg = () => {
     setCategory(!Category);
   };
@@ -24,7 +26,10 @@ function Collection() {
   const sizetogg = () => {
     setSize(!size);
   };
-
+  const Filterdata = () => {
+    setFilter(!filter);
+    console.log(filter);
+  };
   return (
     <div className="font-['Maison Neue']">
       <div className="h-28 bg-white">
@@ -141,61 +146,43 @@ function Collection() {
             <div className="flex justify-between   w-full">
               <div className="flex flex-col justify-center items-center">
                 <div className="w-6 h-6 rounded-full bg-zinc-900 border-3 hover:border-black hover:border-1" />
-                <h1 className=" font-['Maison Neue']  tracking-tight">
-                  Black
-                </h1>
+                <h1 className=" font-['Maison Neue']  tracking-tight">Black</h1>
               </div>
               <div className="flex flex-col justify-center items-center">
                 <div className="w-6 h-6 rounded-full bg-white  border-[1px] hover:border-black hover:border-1" />
-                <h1 className=" font-['Maison Neue'] tracking-tight">
-                  White
-                </h1>
+                <h1 className=" font-['Maison Neue'] tracking-tight">White</h1>
               </div>
               <div className="flex flex-col justify-center items-center">
                 <div className="w-6 h-6 rounded-full bg-blue-900   border-[1px] hover:border-black hover:border-1" />
-                <h1 className=" font-['Maison Neue'] tracking-tight">
-                  Blue
-                </h1>
+                <h1 className=" font-['Maison Neue'] tracking-tight">Blue</h1>
               </div>
             </div>
             <div className="flex justify-between   w-full">
               <div className="flex flex-col justify-center items-center">
                 <div className="w-6 h-6 rounded-full bg-pink-900  border-[1px] hover:border-black hover:border-1" />
-                <h1 className=" font-['Maison Neue']  tracking-tight">
-                  Pink
-                </h1>
+                <h1 className=" font-['Maison Neue']  tracking-tight">Pink</h1>
               </div>
               <div className="flex flex-col justify-center items-center">
                 <div className="w-6 h-6 rounded-full bg-yellow-400  border-[1px] hover:border-black hover:border-1" />
-                <h1 className=" font-['Maison Neue'] tracking-tight">
-                  Brown
-                </h1>
+                <h1 className=" font-['Maison Neue'] tracking-tight">Brown</h1>
               </div>
               <div className="flex flex-col justify-center items-center">
                 <div className="w-6 h-6 rounded-full bg-stone-600  border-[1px] hover:border-black hover:border-1" />
-                <h1 className=" font-['Maison Neue'] tracking-tight">
-                  olive
-                </h1>
+                <h1 className=" font-['Maison Neue'] tracking-tight">olive</h1>
               </div>
             </div>
             <div className="flex justify-between   w-full">
               <div className="flex flex-col justify-center items-center">
                 <div className="w-6 h-6 rounded-full bg-zinc-200  border-[1px] hover:border-black hover:border-1" />
-                <h1 className=" font-['Maison Neue']  tracking-tight">
-                  Gray
-                </h1>
+                <h1 className=" font-['Maison Neue']  tracking-tight">Gray</h1>
               </div>
               <div className="flex flex-col justify-center items-center">
                 <div className="w-6 h-6 rounded-full bg-orange-400  border-[1px] hover:border-black hover:border-1" />
-                <h1 className=" font-['Maison Neue'] tracking-tight">
-                  Orange
-                </h1>
+                <h1 className=" font-['Maison Neue'] tracking-tight">Orange</h1>
               </div>
               <div className="flex flex-col justify-center items-center">
                 <div className="w-6 h-6 rounded-full bg-stone-400  border-[1px] hover:border-black hover:border-1 border-gray-200 " />
-                <h1 className=" font-['Maison Neue'] tracking-tight">
-                  Tan
-                </h1>
+                <h1 className=" font-['Maison Neue'] tracking-tight">Tan</h1>
               </div>
             </div>
           </div>
@@ -329,18 +316,114 @@ function Collection() {
             <p className=" text-neutral-500 text-xs font-normal font-['Maison Neue'] leading-none tracking-tight">
               Home / Men
             </p>
-            <h1 className=" text-black text-xl  text-center lg:text-start font-normal leading-none font-['Maison Neue'] ">
-              Men’s Clothing & <br /> Apparel - New Arrivals
+            <h1 className=" text-black text-xl md:text-2xl  text-center lg:text-start font-normal leading-none font-['Maison Neue'] ">
+              Men’s Clothing & <br className="md:hidden " /> Apparel - New
+              Arrivals
             </h1>
             <p className="hidden text-black text-base font-normal font-['Maison Neue'] leading-normal tracking-wide">
               Featured
             </p>
           </div>
           <div className="lg:hidden flex justify-between items-center md:p-8  p-4">
-            <div className="flex border px-3 py-2 border-black  justify-center items-center gap-2">
+            <div
+              onClick={Filterdata}
+              className={`flex cursor-pointer   border px-3 py-2 border-black  justify-center items-center gap-2 `}
+            >
               <h1 className="uppercase ">Filter</h1>
               <BiFilter />
             </div>
+            {filter && (
+              <div
+                className={` p-5 border-b bg-black/50  h-screen  fixed rounded-t-3xl bottom-0 left-0 right-0 `}
+              >
+                <div className="bg-white h-[65%] absolute bottom-0 left-0 right-0 rounded-t-3xl overflow-y-scroll">
+                  <div className="p-5 bg-white sticky top-0 z-50 border-b flex justify-between items-center">
+                    <h1 className="tracking-wide font-medium text-[20px]">
+                      Filter
+                    </h1>
+                    <AiOutlineClose
+                      size={20}
+                      className="cursor-pointer"
+                      onClick={() => {
+                        setFilter(!filter);
+                      }}
+                    />
+                  </div>
+
+                  {/* Category */}
+                  <div className="border-b  ">
+                    <div className="flex justify-between p-5 items-center">
+                      <h1 className="font-medium">Category</h1>
+                      <MdKeyboardArrowUp />
+                    </div>
+                    <div className="flex p-5 pt-2 flex-wrap  gap-5">
+                      <h1 className="bg-[#F5F4F4] rounded-full px-3 py-2">
+                        Polos
+                      </h1>
+                      <h1 className="bg-[#F5F4F4] rounded-full px-3 py-2">
+                        Shorts
+                      </h1>
+                      <h1 className="bg-[#F5F4F4] font-['Maison Neue']  rounded-full px-3 py-2">
+                        Shoes & Accessories
+                      </h1>
+                      <h1 className="bg-[#F5F4F4] rounded-full px-3 py-2">
+                        Outerwear
+                      </h1>
+                      <h1 className="bg-[#F5F4F4] rounded-full px-3 py-2">
+                        Denim
+                      </h1>
+                    </div>
+                  </div>
+                  {/* color */}
+                  <div>
+                    <div className="flex justify-between p-5 items-center">
+                      <h1 className="font-medium ">color</h1>
+                      <MdKeyboardArrowUp />
+                    </div>
+                    <div className="p-8 gap-10  pt-3 flex items-center w-full border-b overflow-hidden flex-wrap ">
+                      <div className="flex flex-col ">
+                        <div className="w-9 h-9 rounded-full bg-zinc-900 border-3 hover:border-black hover:border-1" />
+                        <h1 className=" font-['Maison Neue']  tracking-tight">
+                          Black
+                        </h1>
+                      </div>
+                      <div className="flex flex-col ">
+                        <div className="w-9 h-9 rounded-full bg-white  border-[1px] hover:border-black hover:border-1" />
+                        <h1 className=" font-['Maison Neue'] tracking-tight">
+                          White
+                        </h1>
+                      </div>
+
+                      <div className="flex flex-col ">
+                        <div className="w-9 h-9 rounded-full bg-stone-400  border-[1px] hover:border-black hover:border-1 border-gray-200 " />
+                        <h1 className=" font-['Maison Neue'] tracking-tight">
+                          Tan
+                        </h1>
+                      </div>
+                      <div className="flex flex-col ">
+                        <div className="w-9 h-9 rounded-full bg-orange-400  border-[1px] hover:border-black hover:border-1" />
+                        <h1 className=" font-['Maison Neue'] tracking-tight">
+                          Orange
+                        </h1>
+                      </div>
+
+                      <div className="flex flex-col ">
+                        <div className="w-9 h-9 rounded-full bg-stone-600  border-[1px] hover:border-black hover:border-1" />
+                        <h1 className=" font-['Maison Neue'] tracking-tight">
+                          olive
+                        </h1>
+                      </div>
+                      <div className="flex flex-col ">
+                        <div className="w-9 h-9 rounded-full bg-zinc-200  border-[1px] hover:border-black hover:border-1" />
+                        <h1 className=" font-['Maison Neue']  tracking-tight">
+                          Gray
+                        </h1>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
             <div>
               <h1 className="text-xs text-[#737373]">120 Products</h1>
             </div>

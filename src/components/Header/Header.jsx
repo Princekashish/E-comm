@@ -96,7 +96,7 @@ function Header({ frame1 }) {
       </div>
 
       {/* navbar */}
-      <div onMouseLeave={handleNewArrivalsLeave} className="flex p-3 lg:h-16 lg:justify-around md:justify-between md:pr-5 md:pl-5 " >
+      <div onMouseLeave={handleNewArrivalsLeave} className="flex p-3 lg:h-16 lg:justify-around justify-between  md:pr-5 md:pl-5 " >
         <div className="flex justify-center items-center lg:hidden  ">
           {navabar ? (
             <AiOutlineClose
@@ -201,8 +201,8 @@ function Header({ frame1 }) {
             {item.length === 0 ? (
               ""
             ) : (
-              <div className="absolute top-12 right-8 lg:right-[164px] lg:top-9   rounded-full bg-black h-4 w-4 flex justify-center items-center text-white ">
-                <p className="text-[9px]">{item.length}</p>
+              <div className="absolute top-12 right-4 md:right-7 md:top-12 lg:right-[164px] lg:top-9   rounded-full bg-black h-4 w-4 md:h-7 md:w-7 flex justify-center items-center text-white ">
+                <p className="text-[9px] md:text-sm">{item.length}</p>
               </div>
             )}
           </div>
@@ -229,7 +229,7 @@ function Header({ frame1 }) {
       <div>
         {navabar && (
           <div>
-            <div className="sticky min-h-screen  w-11/12  ">
+            <div className="sticky h-screen  w-11/12  md:h-[40%]">
               <div className=" flex items-center p-1 font-normal font-['Maison Neue'] leading-none tracking-tight text-xl">
                 <h1
                   onClick={() => {
